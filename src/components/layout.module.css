@@ -63,26 +63,56 @@
 .nav {
     display: grid;
     align-self: end;
-    margin-bottom: 20px;
+    margin-bottom: 20%;
     max-width: 50px;
     max-height: 100px;
+    padding: 0.5em 0.8em 0.5em 0.8em;
 }
 
 @media only screen and (min-width: 1000px) {
     .nav {
         align-self: center;
         margin-top: 50px;
+        padding-top: 400px;
     }
+}
+
+
+.nav img {
+    width: 100px;
+}
+
+.navSectionShow {
+    height: 400px;
+    transition: opacity 0.75s, height 0.2s;
+    overflow: hidden;
+}
+
+.navSectionHidden {
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.3s, height 0.2s;
+    overflow: hidden;
+}
+
+.nav:hover {
+    cursor: pointer;
+}
+
+.horzNavDetail {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: #74cdaf;
+    font-weight: 500;
+    font-size: calc(25px + 0.2vw);
 }
 
 .rightNav {
     composes: nav;
-    padding-right: 1em;
 }
 
 .leftNav {
     composes: nav;
-    padding-left: 1em;
 }
 
 /* FRONT PAGE */

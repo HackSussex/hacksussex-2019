@@ -2,10 +2,10 @@ import React from "react";
 import "./global.css";
 import styles from "./layout.module.css";
 
-import logo from "../images/logo-gradient.png"
+import logo from "../images/logo-gradient.png";
+import leftArrow from "../images/arrow-left.svg";
+import rightArrow from "../images/arrow-right.svg"
 
-import leftNav from "../images/left-nav.png"
-import rightNav from "../images/right-nav.png"
 
 export class Canvas extends React.Component {
     componentDidMount() {
@@ -97,17 +97,54 @@ export class Layout extends React.Component {
     }
 }
 
+export class Nav extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { active: false }
+    }
+
+    handleMouseEnter() {
+        this.setState({ active: true })
+    }
+
+    handleMouseLeave() {
+        this.setState({ active: false })
+    }
+
+    render() {
+        const ifVisible = (visible, navPart, extraClasses) => {
+            const visibleClass = visible ? styles.navSectionShow : styles.navSectionHidden;
+            return (
+                <div className={visibleClass + " " + extraClasses}>
+                    { navPart }
+                </div>
+            )
+        }
+
+        return (
+            <div className={styles.nav + " " + this.props.className}
+                 onMouseEnter={(ev) => this.handleMouseEnter(ev)}
+                 onMouseLeave={(ev) => this.handleMouseLeave(ev)}
+                 onClick={this.props.navAction}>
+                { ifVisible(this.state.active, this.props.detail, this.props.detailClass) }
+                { ifVisible(!this.state.active, this.props.icon) }
+            </div>
+        )
+    }
+}
+
 export const Panel = ({ children, leftNavAction, rightNavAction, classes }) => {
-    const left = (
-        <div className={styles.leftNav} onClick={leftNavAction}>
-            <img src={leftNav} className={styles.leftNav} />
-        </div>
-    )
-    const right = (
-        <div className={styles.rightNav} onClick={rightNavAction}>
-            <img src={rightNav} className={styles.rightNav} />
-        </div>
-    )
+    const left = (<Nav detail="ABOUT"
+                       icon={<img src={leftArrow} />}
+                       detailClass={styles.horzNavDetail}
+                       className={styles.leftNav}
+                       navAction={leftNavAction} />)
+
+    const right = (<Nav detail="CHALLENGES"
+                        icon={<img src={rightArrow} /> }
+                        detailClass={styles.horzNavDetail}
+                        className={styles.rightNav}
+                        navAction={rightNavAction} />)
 
     return (
         <div className={styles.panel + " " + classes}>
