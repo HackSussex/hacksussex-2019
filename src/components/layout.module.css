@@ -1,0 +1,153 @@
+#canvasBG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../images/grey-icon-scatter.png");
+    background-position: 10% 90%;
+    opacity: 0.4;
+}
+
+.panels {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.open {
+    height: 100vh;
+    transition: opacity 0.5s, height 0.5s;
+}
+
+.closed {
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.2s, height 0.5s;
+}
+
+.main {
+    display: grid;
+    width: 100vw;
+    grid-auto-flow: column;
+    overflow: hidden;
+}
+
+.foot {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.panel {
+    display: grid;
+    max-width: 100%;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    grid-template-columns: 15% 70% 15%;
+}
+
+.panelOpen {
+    width: 100vw;
+    transition: opacity 0.2s, width 0.5s;
+}
+
+.panelClosed {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.2s, width 0.5s;
+}
+
+.nav {
+    display: grid;
+    align-self: end;
+    margin-bottom: 20px;
+    max-width: 50px;
+    max-height: 100px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .nav {
+        align-self: center;
+        margin-top: 50px;
+    }
+}
+
+.rightNav {
+    composes: nav;
+    padding-right: 1em;
+}
+
+.leftNav {
+    composes: nav;
+    padding-left: 1em;
+}
+
+/* FRONT PAGE */
+.frontPage {
+    display: grid;
+    grid-template-rows: 20% 5% 10% 5% 20% auto;
+    justify-items: center;
+}
+
+.logo {
+    display: grid;
+    max-width: 800px;
+    min-width: 200px;
+    align-self: start;
+    align-items: center;
+}
+
+.bar {
+    background-color: #74cdaf;
+    border-radius: 25%;
+    height: 2px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.bigBar {
+    composes: bar;
+    width: 6em;
+    margin-top: 0.1em;
+}
+
+.date, .location {
+    font-size: calc(18px + 0.5vw);
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.medBar {
+    composes: bar;
+    width: 4em;
+}
+
+.smallBar {
+    composes: bar;
+    width: 2em;
+    margin-bottom: 1em;
+}
+
+.applyButton {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 30%;
+    min-height: 40px;
+    width: 40%;
+    min-width: 150px;
+    background-color: #74cdaf;
+    font-size: calc(20px + 0.8vw);
+    font-family: "Quicksand", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: white;
+    border-radius: 5%;
+    margin-bottom: 20%;
+}

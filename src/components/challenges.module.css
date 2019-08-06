@@ -1,0 +1,42 @@
+.challenges {
+    display: grid;
+    height: 60vh;
+    overflow: hidden;
+    justify-items: center;
+}
+
+.challengeTitle {
+}
+
+.challenge {
+    display: grid;
+    grid-template-areas:
+            "title"
+            "body"
+            "sponsor";
+    padding: 1em;
+    background-color: #74cdaff0;
+    overflow: hidden;
+}
+
+.challengeOpen {
+}
+
+.challengeClosed {
+    grid-template-areas: "title";
+}
+
+.title {
+    grid-area: title;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.description {
+    grid-area: body;
+}
+
+.sponsor {
+    grid-area: sponsor;
+}
