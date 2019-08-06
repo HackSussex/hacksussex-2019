@@ -1,6 +1,7 @@
 import React from "react"
-import { Canvas, Panels, Panel, FrontPage } from "../components/layout.jsx"
+import { Canvas, Layout, Panel, FrontPage } from "../components/layout.jsx"
 import { Challenges } from "../components/challenges.jsx"
+import { About } from "../components/about.jsx"
 
 import logo from "../images/logo-black.png"
 
@@ -22,28 +23,28 @@ const challengeList = [
     }
 ]
 
-const dateLoc = {
-    date: "9th - 11th November 2019",
-    loc: "University of Sussex, Brighton East Sussex"
-}
+
+const placeholder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at sodales mi, ut ultrices est. In in sem dolor. Curabitur ut condimentum neque, at ornare est. Maecenas mollis augue nunc, eget luctus est iaculis sit amet. Mauris nec suscipit libero, non rhoncus tellus. Vivamus gravida porta pulvinar. Maecenas dapibus tempus est non fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget nisi nec mi sagittis accumsan. Fusce aliquet accumsan sem non auctor. Ut vitae nunc cursus, placerat massa sit amet, ullamcorper sem. Vestibulum sapien est, sodales at tempor vel, rhoncus in orci. Aenean sit amet lacus lorem. Nullam sagittis a urna ullamcorper ultrices. "
+
 
 export default () => (
     <div id="root">
-
-        <Panels centerName="home" rightName="challenges" leftName="about" bottomName="faq">
+        <Layout>
             <div id="about" key="0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque nibh sit amet pulvinar viverra. Nulla non dui ante. Ut iaculis, nunc at bibendum rhoncus, sapien eros vehicula velit, sit amet fringilla neque sem feugiat ipsum. Nullam in tortor volutpat elit auctor ullamcorper at at mi. Duis quis nulla commodo, maximus magna aliquam, mollis lacus. Integer mattis vitae mauris et ultrices. Aliquam interdum risus a tortor pellentesque facilisis. Sed convallis mollis nibh quis consequat. Sed eros enim, ultrices ac neque id, feugiat tristique felis.
+                <About title="About HackSussex">
+                    { placeholder }
+                </About>
             </div>
             <div id="home" key="1">
                 <FrontPage />
             </div>
             <div id="challenges" key="2">
-                <Challenges challenges={challengeList} />
+                CHALLENGE SECTION UNDER CONSTRUCTION
             </div>
             <div id="faq" key="3">
-                FAQ
+FAQ
             </div>
-        </Panels>
+        </Layout>
 
         <Canvas />
     </div>

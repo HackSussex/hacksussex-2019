@@ -1,6 +1,7 @@
 .challenges {
     display: grid;
     height: 60vh;
+    grid-gap: 1em;
     overflow: hidden;
     justify-items: center;
 }
@@ -30,7 +31,7 @@
     grid-area: title;
     text-align: center;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .description {

@@ -19,7 +19,7 @@ export class Canvas extends React.Component {
     }
 }
 
-export class Panels extends React.Component {
+export class Layout extends React.Component {
     constructor(props) {
         super(props)
         this.state = { horzIx: 1, mode: "main" }
@@ -73,26 +73,20 @@ export class Panels extends React.Component {
         const isOpen = n => this.state.horzIx == n ? styles.panelOpen : styles.panelClosed;
 
         return (
-            <div className={styles.panels}>
+            <div className={styles.layout}>
                 <div className={styles.main + " " + mainStyle}>
                     <Panel classes={isOpen(0)}
                            rightNavAction={() => this.moveDir("RIGHT") }>
-                        {<div></div>}
                         {kids[0]}
-                        {">"}
                     </Panel>
                     <Panel classes={isOpen(1)}
                            leftNavAction={() => this.moveDir("LEFT")}
                            rightNavAction={() => this.moveDir("RIGHT")}>
-                        {"<"}
                         {kids[1]}
-                        {">"}
                     </Panel>
                     <Panel classes={isOpen(2)}
                            leftNavAction={() => this.moveDir("LEFT")}>
-                        {"<"}
                         { kids[2] }
-                        {<div></div>}
                     </Panel>
                 </div>
                 <div className={styles.foot + " " + footStyle}>
@@ -104,7 +98,6 @@ export class Panels extends React.Component {
 }
 
 export const Panel = ({ children, leftNavAction, rightNavAction, classes }) => {
-    const kids = React.Children.toArray(children)
     const left = (
         <div className={styles.leftNav} onClick={leftNavAction}>
             <img src={leftNav} className={styles.leftNav} />
@@ -120,7 +113,7 @@ export const Panel = ({ children, leftNavAction, rightNavAction, classes }) => {
         <div className={styles.panel + " " + classes}>
             { leftNavAction ? left : <div></div> }
             <div className={styles.centerContent}>
-                { kids[1] }
+                { children }
             </div>
             { rightNavAction ? right : <div></div> }
         </div>

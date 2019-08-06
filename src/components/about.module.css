@@ -1,0 +1,24 @@
+.aboutContainer {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.title {
+    font-family: "Quicksand", sans-serif;
+    justify-self: center;
+    font-size: 4em;
+    font-weight: 500;
+    color: #74cdaf;
+}
+
+.content {
+    font-size: calc(18px + 0.5vw);
+    max-width: 1000px;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.afterVideo {
+    font-size: calc(20px + 0.2vw);
+}

@@ -10,7 +10,7 @@
     opacity: 0.4;
 }
 
-.panels {
+.layout {
     display: grid;
     grid-auto-flow: row;
 }

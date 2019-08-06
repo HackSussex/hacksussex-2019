@@ -3,18 +3,24 @@ import styles from "./challenges.module.css"
 
 function renderChallenge(challenge, key, open=true) {
     const style = open ? styles.challengeOpen : styles.challengeClosed
-    return (
-        <div className={styles.challenge + " " + style}
-             key={`${key}`}>
-            <div className={styles.title}>
-                { challenge.name }
-            </div>
+
+    const challengeBody = (
+        <div id="challengeBody">
             <div className={styles.description}>
                 { challenge.brief }
             </div>
             <div className={styles.sponsor}>
                 Sponsor: { challenge.sponsor }
             </div>
+        </div>
+    )
+
+    return (
+        <div className={styles.challenge + " " + style} key={`${key}`}>
+            <div className={styles.title}>
+                { challenge.name }
+            </div>
+            { open ? challengeBody : null }
         </div>
     )
 }
