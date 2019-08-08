@@ -4,7 +4,6 @@
     display: grid;
     justify-items: center;
     align-content: center;
-    overflow: hidden;
 }
 
 .nav img {
@@ -13,13 +12,14 @@
 }
 
 .navSectionShow {
-    transition: opacity 0.5s, height 0.5s;
+    transition: opacity 0.2s, height 0.5s;
 }
 
 .navSectionHidden {
     height: 0;
     opacity: 0;
-    transition: opacity 0.5s, height 0.5s;
+    transition: opacity 0.5s, height 1s;
+    overflow: hidden;
 }
 
 .horzDetail {
@@ -36,5 +36,4 @@
     letter-spacing: 5px;
     text-align: center;
     font-size: calc(25px + 0.4vw);
-    padding-bottom: 0.5em;
 }
