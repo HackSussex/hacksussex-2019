@@ -1,8 +1,8 @@
 # HackSussex 2019 Website
 
-# Sections Completed
+## Sections Completed
 
-## Urgent
+### Urgent
 - [x] Home Page / Front Page
 
 - [ ] About 
@@ -13,6 +13,9 @@
 
 - [ ] FAQ
 
-## Non-Urgent / Day-of-Hackathon
+### Non-Urgent / Day-of-Hackathon
 - [ ] Challenge Section
 
+## General TODO
+- [ ] Reorder component heirarchy, separating panels from layout
+- [ ] Decouple content from code, with markdown

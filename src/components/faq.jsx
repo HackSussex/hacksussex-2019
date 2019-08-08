@@ -12,6 +12,8 @@ function renderFaq(faq, ix) {
             <div className={styles.faqQuestion}>
                 { faq.question }
             </div>
+            <div className={styles.faqLine}>
+            </div>
             <div className={styles.faqAnswer}>
                 { faq.answer }
             </div>

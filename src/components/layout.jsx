@@ -93,7 +93,7 @@ export class Layout extends React.Component {
                             { kids[2] }
                         </Panel>
                     </div>
-                    <Nav detail="FAQ"
+                    <Nav detail="MORE"
                          icon={downArrow}
                          detailClass={navStyle.vertNavDetail}
                          extraClass={navStyle.botNav}
