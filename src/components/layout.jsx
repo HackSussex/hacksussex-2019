@@ -1,10 +1,13 @@
 import React from "react";
+import Nav from "./nav.jsx";
 import "./global.css";
 import styles from "./layout.module.css";
+import navStyle from "./nav.module.css";
 
 import logo from "../images/logo-gradient.png";
 import leftArrow from "../images/arrow-left.svg";
 import rightArrow from "../images/arrow-right.svg"
+import downArrow from "../images/arrow-down.svg";
 
 
 export class Canvas extends React.Component {
@@ -22,7 +25,7 @@ export class Canvas extends React.Component {
 export class Layout extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { horzIx: 1, mode: "main" }
+        this.state = { horzIx: 1, mode: "upper" }
     }
 
     moveDir(dir) {
@@ -37,7 +40,7 @@ export class Layout extends React.Component {
                 break;
             case "DOWN":this.setState({ mode: "foot" })
                 break;
-            case "UP": this.setState({ mode: "main" })
+            case "UP": this.setState({ mode: "upper" })
                 break;
         }
     }
@@ -67,27 +70,36 @@ export class Layout extends React.Component {
         console.log("Active: " + JSON.stringify(this.state))
         const kids = React.Children.toArray(this.props.children)
 
-        const mainStyle = this.state.mode == "main" ? styles.open : styles.closed;
+        const upperStyle = this.state.mode == "upper" ? styles.open : styles.closed;
         const footStyle = this.state.mode == "foot" ? styles.open : styles.closed;
 
         const isOpen = n => this.state.horzIx == n ? styles.panelOpen : styles.panelClosed;
 
         return (
             <div className={styles.layout}>
-                <div className={styles.main + " " + mainStyle}>
-                    <Panel classes={isOpen(0)}
-                           rightNavAction={() => this.moveDir("RIGHT") }>
-                        {kids[0]}
-                    </Panel>
-                    <Panel classes={isOpen(1)}
-                           leftNavAction={() => this.moveDir("LEFT")}
-                           rightNavAction={() => this.moveDir("RIGHT")}>
-                        {kids[1]}
-                    </Panel>
-                    <Panel classes={isOpen(2)}
-                           leftNavAction={() => this.moveDir("LEFT")}>
-                        { kids[2] }
-                    </Panel>
+                <div className={styles.upper + " " + upperStyle}>
+                    <div className={styles.main}>
+                        <Panel classes={isOpen(0)}
+                               rightNavAction={() => this.moveDir("RIGHT") }>
+                            {kids[0]}
+                        </Panel>
+                        <Panel classes={isOpen(1)}
+                               leftNavAction={() => this.moveDir("LEFT")}
+                               rightNavAction={() => this.moveDir("RIGHT")}>
+                            {kids[1]}
+                        </Panel>
+                        <Panel classes={isOpen(2)}
+                               leftNavAction={() => this.moveDir("LEFT")}>
+                            { kids[2] }
+                        </Panel>
+                    </div>
+                    <Nav detail="FAQ"
+                         icon={downArrow}
+                         detailClass={navStyle.vertNavDetail}
+                         extraClass={navStyle.botNav}
+                         navAction={() => this.moveDir("DOWN")} />
+
+
                 </div>
                 <div className={styles.foot + " " + footStyle}>
                     {kids[3]}
@@ -97,53 +109,17 @@ export class Layout extends React.Component {
     }
 }
 
-export class Nav extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { active: false }
-    }
-
-    handleMouseEnter() {
-        this.setState({ active: true })
-    }
-
-    handleMouseLeave() {
-        this.setState({ active: false })
-    }
-
-    render() {
-        const ifVisible = (visible, navPart, extraClasses) => {
-            const visibleClass = visible ? styles.navSectionShow : styles.navSectionHidden;
-            return (
-                <div className={visibleClass + " " + extraClasses}>
-                    { navPart }
-                </div>
-            )
-        }
-
-        return (
-            <div className={styles.nav + " " + this.props.className}
-                 onMouseEnter={(ev) => this.handleMouseEnter(ev)}
-                 onMouseLeave={(ev) => this.handleMouseLeave(ev)}
-                 onClick={this.props.navAction}>
-                { ifVisible(this.state.active, this.props.detail, this.props.detailClass) }
-                { ifVisible(!this.state.active, this.props.icon) }
-            </div>
-        )
-    }
-}
-
 export const Panel = ({ children, leftNavAction, rightNavAction, classes }) => {
     const left = (<Nav detail="ABOUT"
-                       icon={<img src={leftArrow} />}
-                       detailClass={styles.horzNavDetail}
-                       className={styles.leftNav}
+                       icon={leftArrow}
+                       detailClass={navStyle.horzNavDetail}
+                       extraClass={styles.leftNav}
                        navAction={leftNavAction} />)
 
     const right = (<Nav detail="CHALLENGES"
-                        icon={<img src={rightArrow} /> }
-                        detailClass={styles.horzNavDetail}
-                        className={styles.rightNav}
+                        icon={rightArrow}
+                        detailClass={navStyle.horzNavDetail}
+                        extraClass={styles.rightNav}
                         navAction={rightNavAction} />)
 
     return (

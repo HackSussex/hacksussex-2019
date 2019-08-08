@@ -1,0 +1,11 @@
+.challenges {
+    display: grid;
+}
+
+.challengesTitle {
+    font-family: "Quicksand", sans-serif;
+    font-size: calc(22px + 2vw);
+    font-weight: 500;
+    color: #74cdaf;
+    text-align: center;
+}

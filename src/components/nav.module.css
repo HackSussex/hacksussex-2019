@@ -1,0 +1,48 @@
+
+.nav {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.nav img {
+    width: calc(15px + 3vw);
+    height: calc(15px + 3vw);
+}
+
+.navSectionShow {
+    transition: opacity 0.5s, height 0.5s;
+    overflow: hidden;
+}
+
+.navSectionHidden {
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s, height 0.5s;
+    overflow: hidden;
+}
+
+.nav:hover {
+    cursor: pointer;
+}
+
+.navDetail {
+}
+
+.horzNavDetail {
+    composes: navDetail;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: #74cdaf;
+    font-weight: 500;
+    font-size: calc(25px + 0.4vw);
+}
+
+.vertNavDetail {
+    composes: navDetail;
+    color: #74cdaf;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: calc(25px + 0.4vw);
+}

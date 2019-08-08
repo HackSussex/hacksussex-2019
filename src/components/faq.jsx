@@ -1,46 +1,47 @@
-import React from "react"
-import styles from "./faq.module.css"
+import React from "react";
+import Nav from "./nav.jsx";
+import styles from "./faq.module.css";
+import navStyle from "./nav.module.css";
 
-export const Question = ({ title, content, open }) => {
-    const style = open ? styles.questionOpen : styles.questionClosed;
+import upArrow from "../images/arrow-up.svg";
+import downArrow from "../images/arrow-down.svg";
+
+function renderFaq(faq, ix) {
     return (
-        <div className={styles.question + " " + style}>
-            <div className={styles.questionTitle}>
-                { title }
+        <div key={ix} className={styles.faq}>
+            <div className={styles.faqQuestion}>
+                { faq.question }
             </div>
-            <div className={open ? styles.contentOpen : styles.contentClosed}>
-                { content }
-            </div>
-            <div className={open ? styles.questionClose : styles.contentClosed}>
-                <div className={styles.closeButton}>
-                    X
-                </div>
-            </div>
-            <div className={!open ? styles.questionExpand : styles.contentClosed}>
-                V
+            <div className={styles.faqAnswer}>
+                { faq.answer }
             </div>
         </div>
     )
 }
 
-export class Faq extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
-    render() {
-        return (
-            <div className={styles.faq}>
-                <div className={styles.faqTitle}>
+export const Faq = ({ faqs, onNavUp, onNavDown }) => {
+    const renderedFaqs = faqs.map((faq, ix) => renderFaq(faq,ix))
+    return (
+        <div className={styles.faqSection}>
+            <Nav detail="BACK"
+                 icon={upArrow}
+                 detailClass={navStyle.vertNavDetail}
+                 extraClass={styles.navUp}
+                 navAction={onNavUp} />
+            <div classname={styles.faqs}>
+                <div className={styles.faqsTitle}>
                     Frequently Asked Questions
                 </div>
-                <div className={styles.faqContent}>
-                    <Question title="What's a Hackathon?"
-                              content="A Hackathon is a 24 Hour invention marathon"
-                              open={true} />
+                <div className={styles.faqsContent}>
+                    { renderedFaqs }
                 </div>
             </div>
-        )
-    }
+            <Nav detail="SPONSORS"
+                 icon={downArrow}
+                 detailClass={navStyle.vertNavDetail}
+                 extraClass={styles.navDown}
+                 navAction={onNavUp} />
+        </div>
+    )
 }
-
