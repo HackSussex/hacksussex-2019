@@ -1,10 +1,10 @@
 import React from "react";
 import Nav from "./nav.jsx";
+import Panel from "./panel.jsx";
 import "./global.css";
 import styles from "./layout.module.css";
 import navStyle from "./nav.module.css";
 
-import logo from "../images/logo-gradient.png";
 import leftArrow from "../images/arrow-left.svg";
 import rightArrow from "../images/arrow-right.svg"
 import downArrow from "../images/arrow-down.svg";
@@ -25,35 +25,65 @@ export class Canvas extends React.Component {
 export class Layout extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { horzIx: 1, mode: "upper" }
+        this.state = {
+            home: true,
+            about: false,
+            sponsors: false,
+            challenges: false,
+            faq: false,
+            direction: "horz"
+        }
     }
 
-    moveDir(dir) {
-        switch(dir) {
-            case "LEFT": this.setState(state => {
-                return { horzIx: Math.max(state.horzIx-1,0), mode: state.mode }
-            })
-                break;
-            case "RIGHT": this.setState(state => {
-                return { horzIx: Math.min(state.horzIx+1,2),  mode: state.mode }
-            })
-                break;
-            case "DOWN":this.setState({ mode: "foot" })
-                break;
-            case "UP": this.setState({ mode: "upper" })
-                break;
-        }
+    clearAll() {
+        Object.keys(this.state).forEach(key => this.state[key] = false)
+    }
+
+    replace(target) {
+        this.clearAll()
+        this.setState(s => Object.assign(s, target))
+    }
+
+    moveLeft() {
+        if (this.state.home)
+            this.replace({ about: true, direction: "horz" })
+        else if (this.state.challenges)
+            this.replace({ home: true, direction: "horz" })
+    }
+
+    moveRight() {
+        if (this.state.about)
+            this.replace({ home: true, direction: "horz" })
+        else if (this.state.home)
+            this.replace({ challenges: true, direction: "horz" })
+        console.log(JSON.stringify(this.state))
+    }
+
+    moveDown() {
+        if (this.state.faq)
+            this.replace({ sponsor: true, direction: "vert" })
+        else
+            this.replace({ faq: true, direction: "vert" })
+        console.log(JSON.stringify(this.state))
+    }
+
+    moveUp() {
+        if (this.state.sponsor)
+            this.replace({ faq: true, direction: "vert" })
+        else if (this.state.faq)
+            this.replace({ home: true, direction: "vert" })
+        console.log(JSON.stringify(this.state))
     }
 
     handleKeyDown(event) {
         switch(event.key) {
-            case "ArrowDown": this.moveDir("DOWN")
+            case "ArrowDown": this.moveDown()
                 break;
-            case "ArrowLeft": this.moveDir("LEFT")
+            case "ArrowLeft": this.moveLeft()
                     break;
-            case "ArrowRight": this.moveDir("RIGHT")
+            case "ArrowRight": this.moveRight()
                 break;
-            case "ArrowUp": this.moveDir("UP")
+            case "ArrowUp": this.moveUp()
                 break;
         }
     }
@@ -67,95 +97,56 @@ export class Layout extends React.Component {
     }
 
     render() {
-        console.log("Active: " + JSON.stringify(this.state))
-        const kids = React.Children.toArray(this.props.children)
-
-        const upperStyle = this.state.mode == "upper" ? styles.open : styles.closed;
-        const footStyle = this.state.mode == "foot" ? styles.open : styles.closed;
-
-        const isOpen = n => this.state.horzIx == n ? styles.panelOpen : styles.panelClosed;
-
         return (
             <div className={styles.layout}>
-                <div className={styles.upper + " " + upperStyle}>
-                    <div className={styles.main}>
-                        <Panel classes={isOpen(0)}
-                               rightNavAction={() => this.moveDir("RIGHT") }>
-                            {kids[0]}
-                        </Panel>
-                        <Panel classes={isOpen(1)}
-                               leftNavAction={() => this.moveDir("LEFT")}
-                               rightNavAction={() => this.moveDir("RIGHT")}>
-                            {kids[1]}
-                        </Panel>
-                        <Panel classes={isOpen(2)}
-                               leftNavAction={() => this.moveDir("LEFT")}>
-                            { kids[2] }
-                        </Panel>
-                    </div>
-                    <Nav detail="MORE"
-                         icon={downArrow}
-                         detailClass={navStyle.vertNavDetail}
-                         extraClass={navStyle.botNav}
-                         navAction={() => this.moveDir("DOWN")} />
-
-
-                </div>
-                <div className={styles.foot + " " + footStyle}>
-                    {kids[3]}
-                </div>
+                <Panel name="about" right="home" down="faq"
+                       className={styles.aboutSection}
+                       open={this.state.about}
+                       collapse={this.state.direction}
+                       onRightNav={() => this.moveRight()}
+                       onDownNav={() => this.moveDown()}>
+                    { this.props.aboutSection }
+                </Panel>
+                <Panel name="home" left="about" right="challenges" down="faq"
+                       className={styles.homeSection}
+                       open={this.state.home}
+                       collapse={this.state.direction}
+                       onRightNav={() => this.moveRight()}
+                       onLeftNav={() => this.moveLeft()}
+                       onDownNav={() => this.moveDown()}>
+                    { this.props.homeSection }
+                </Panel>
+                <Panel name="challenges" left="home" down="faq"
+                       className={styles.challengesSection}
+                       open={this.state.challenges}
+                       collapse={this.state.direction}
+                       onLeftNav={() => this.moveLeft()}
+                       onDownNav={() => this.moveDown()}>
+                    { this.props.challengesSection }
+                </Panel>
+                <Panel name="faq" down="sponsors" up="home"
+                       className={styles.faqSection}
+                       open={this.state.faq}
+                       collapse={this.state.direction}
+                       onUpNav={() => this.moveUp()}
+                       onDownNav={() => this.moveDown()}>
+                    { this.props.faqSection }
+                </Panel>
+                <Panel name="sponsors" up="faq"
+                       className={styles.sponsorsSection}
+                       open={this.state.sponsors}
+                       collapse={this.state.direction}
+                       onUpNav={() => this.moveUp()}>
+                    { this.props.sponsorsSection }
+                </Panel>
             </div>
         )
     }
 }
 
-export const Panel = ({ children, leftNavAction, rightNavAction, classes }) => {
-    const left = (<Nav detail="ABOUT"
-                       icon={leftArrow}
-                       detailClass={navStyle.horzNavDetail}
-                       extraClass={styles.leftNav}
-                       navAction={leftNavAction} />)
-
-    const right = (<Nav detail="CHALLENGES"
-                        icon={rightArrow}
-                        detailClass={navStyle.horzNavDetail}
-                        extraClass={styles.rightNav}
-                        navAction={rightNavAction} />)
-
-    return (
-        <div className={styles.panel + " " + classes}>
-            { leftNavAction ? left : <div></div> }
-            <div className={styles.centerContent}>
-                { children }
-            </div>
-            { rightNavAction ? right : <div></div> }
-        </div>
-    )
-}
 
 
-export const FrontPage = ({ children }) => (
-    <div className={styles.frontPage}>
-        <div className={styles.logo}>
-            <img src={logo} alt="Main Logo" />
-        </div>
-        <div className={styles.bigBar}>
-        </div>
-        <div className={styles.date}>
-            9th - 10th November, 2019
-        </div>
-        <div className={styles.medBar}>
-        </div>
-        <div className={styles.location}>
-            University of Sussex, Brighton
-        </div>
-        <div className={styles.smallBar}>
-        </div>
-        <div className={styles.applyButton}>
-            APPLY
-        </div>
-    </div>
-)
+
 
 
 //

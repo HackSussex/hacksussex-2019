@@ -21,17 +21,11 @@ function renderFaq(faq, ix) {
     )
 }
 
-
-export const Faq = ({ faqs, onNavUp, onNavDown }) => {
+export const Faq = ({ faqs }) => {
     const renderedFaqs = faqs.map((faq, ix) => renderFaq(faq,ix))
     return (
         <div className={styles.faqSection}>
-            <Nav detail="BACK"
-                 icon={upArrow}
-                 detailClass={navStyle.vertNavDetail}
-                 extraClass={styles.navUp}
-                 navAction={onNavUp} />
-            <div classname={styles.faqs}>
+            <div className={styles.faqs}>
                 <div className={styles.faqsTitle}>
                     Frequently Asked Questions
                 </div>
@@ -39,11 +33,6 @@ export const Faq = ({ faqs, onNavUp, onNavDown }) => {
                     { renderedFaqs }
                 </div>
             </div>
-            <Nav detail="SPONSORS"
-                 icon={downArrow}
-                 detailClass={navStyle.vertNavDetail}
-                 extraClass={styles.navDown}
-                 navAction={onNavUp} />
         </div>
     )
 }

@@ -12,137 +12,30 @@
 
 .layout {
     display: grid;
-    grid-auto-flow: row;
-}
-
-.open {
     height: 100vh;
-    transition: opacity 0.2s, height 0.2s;
-}
-
-.closed {
-    height: 0;
-    opacity: 0;
-    transition: opacity 0.3s, height 0.2s;
-}
-
-.upper {
-    display: grid;
-    grid-template-rows: 90% 10%;
-    align-items: center;
-    justify-items: center;
-    overflow: hidden;
-}
-
-.main {
-    display: grid;
-    grid-auto-flow: column;
-}
-
-.foot {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    overflow: hidden;
-}
-
-.panel {
-    display: grid;
-    max-width: 100%;
-    align-items: center;
-    justify-items: center;
-    overflow: hidden;
-    grid-template-columns: 15% 70% 15%;
-}
-
-.panelOpen {
     width: 100vw;
-    transition: opacity 0.6s, width 0.2s;
+    grid-template-areas:
+        "about home challenges"
+            "faq faq faq"
+            "sponsors sponsors sponsors";
 }
 
-.panelClosed {
-    width: 0;
-    opacity: 0;
-    transition: opacity 0.1s, width 0.2s;
-    overflow: hidden;
+.aboutSection {
+    grid-area: about;
 }
 
-.nav {
-    align-self: center;
+.homeSection {
+    grid-area: home;
 }
 
-.leftNav {
-    composes: nav;
-}
-.rightNav {
-    composes: nav;
-}
-.botNav {
+.challengesSection {
+    grid-area: challenges;
 }
 
-/* FRONT PAGE */
-.frontPage {
-    display: grid;
-    grid-template-rows: 20% 5% 10% 5% 20% auto;
-    justify-items: center;
+.faqSection {
+    grid-area: faq;
 }
 
-.logo {
-    display: grid;
-    max-width: 800px;
-    min-width: 200px;
-    align-self: start;
-    align-items: center;
-}
-
-.bar {
-    background-color: #74cdaf;
-    border-radius: 25%;
-    height: 2px;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
-}
-
-.bigBar {
-    composes: bar;
-    width: 6em;
-    margin-top: 0.1em;
-}
-
-.date, .location {
-    font-size: calc(18px + 0.5vw);
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    font-family: "Red Hat Text", sans-serif;
-    font-weight: 400;
-    text-align: center;
-}
-
-.medBar {
-    composes: bar;
-    width: 4em;
-}
-
-.smallBar {
-    composes: bar;
-    width: 2em;
-    margin-bottom: 1em;
-}
-
-.applyButton {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    height: 30%;
-    min-height: 40px;
-    width: 40%;
-    min-width: 150px;
-    background-color: #74cdaf;
-    font-size: calc(20px + 0.8vw);
-    font-family: "Quicksand", serif;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: white;
-    border-radius: 5%;
-    margin-bottom: 20%;
+.sponsorsSection {
+    grid-area: sponsors;
 }

@@ -1,5 +1,6 @@
 import React from "react";
-import { Canvas, Layout, Panel, FrontPage } from "../components/layout.jsx";
+import { Canvas, Layout, Panel } from "../components/layout.jsx";
+import { FrontPage } from "../components/frontpage.jsx";
 import { Challenges } from "../components/challenges.jsx";
 import { About } from "../components/about.jsx";
 import { Faq } from "../components/faq.jsx";
@@ -20,23 +21,12 @@ const faqs = [
 
 export default () => (
     <div id="root">
-        <Layout>
-            <div id="about" key="0">
-                <About title="About HackSussex">
-                    { placeholder }
-                </About>
-            </div>
-            <div id="home" key="1">
-                <FrontPage />
-            </div>
-            <div id="challenges" key="2">
-                <Challenges />
-            </div>
-            <div id="faq" key="3">
-                <Faq faqs={faqs} />
-            </div>
-        </Layout>
-
+        <Layout
+            aboutSection={<About title="About HackSussex">{ placeholder }</About>}
+            homeSection={<FrontPage />}
+            challengesSection={<Challenges />}
+            faqSection={<Faq faqs={faqs} />}
+            sponsorsSection={<div></div>} />
         <Canvas />
     </div>
 )

@@ -1,0 +1,65 @@
+.frontPage {
+    display: grid;
+    grid-template-rows: 20% 5% 10% 5% 20% auto;
+    justify-items: center;
+}
+
+.logo {
+    display: grid;
+    max-width: 800px;
+    min-width: 200px;
+    align-self: start;
+    align-items: center;
+}
+
+.bar {
+    background-color: #74cdaf;
+    border-radius: 25%;
+    height: 2px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.bigBar {
+    composes: bar;
+    width: 6em;
+    margin-top: 0.1em;
+}
+
+.date, .location {
+    font-size: calc(18px + 0.5vw);
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.medBar {
+    composes: bar;
+    width: 4em;
+}
+
+.smallBar {
+    composes: bar;
+    width: 2em;
+    margin-bottom: 1em;
+}
+
+.applyButton {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 30%;
+    min-height: 40px;
+    width: 40%;
+    min-width: 150px;
+    background-color: #74cdaf;
+    font-size: calc(20px + 0.8vw);
+    font-family: "Quicksand", serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: white;
+    border-radius: 5%;
+    margin-bottom: 20%;
+}
