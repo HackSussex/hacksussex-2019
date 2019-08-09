@@ -7,15 +7,15 @@ const clientID = "7887ee06fcb554970bebc4473e4e442bb6a06b883c840c732c6b773ec54d97
 const clientSecret = "9baf3f59ba83df9e6d7c95fd027cd7896ce80bf3c070a3f1af62782fec39f67f"
 
 const Link = ({ children, href, className }) => (
-        <a href={href} taregt="_blank" className={util.clearLink + " " + className}>
-            { children }
-        </a>
+    <a href={href} target="_blank" className={util.clearLink + " " + className}>
+        { children }
+    </a>
 )
 
-const Button = ({ children }) => (
-    <div className={styles.button}>
+const Button = ({ children, href }) => (
+    <Link href={href} className={styles.button}>
         { children }
-    </div>
+    </Link>
 )
 
 const MyMLH = () => {
@@ -25,14 +25,8 @@ const MyMLH = () => {
     const link = `https://my.mlh.io/oauth/authorize?client_id=${clientID}&redirect_uri=${redirect}&response_type=code&scope=${scope}`
 
     return (
-        <Button>
-            <Link href={link}>
-                <div className={styles.mlhButtonText}>
-                    Register with MyMLH
-                </div>
-                <div className={styles.mlhButtonArrow}>
-                </div>
-            </Link>
+        <Button href={link}>
+            Register with MyMLH
         </Button>
     )
 }
@@ -54,10 +48,8 @@ export const PostApply = () => (
          Thanks for applying{"!"} We're looking forward to seeing you at HackSussex 2019.
             Make sure to check the <a href="/" className={styles.postApplyLink}>FAQ</a> (below the frontpage) for any additional information
         </p>
-        <Button>
-            <Link href="/">
+        <Button href="/">
                 Back Home
-            </Link>
         </Button>
     </div>
 )

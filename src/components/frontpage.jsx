@@ -6,7 +6,7 @@ import logo from "../images/logo-gradient.png";
 
 const Link = ({ children, href, className }) => (
     <a href={href} className={util.clearLink + " " + className}>
-            { children }
+        { children }
     </a>
 )
 

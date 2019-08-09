@@ -16,7 +16,7 @@
     font-family: "Quicksand", sans-serif;
 }
 
-.button {
+.button, button:visited {
     cursor: pointer;
     display: grid;
     border-radius: 5%;
@@ -38,6 +38,10 @@
     background-color: #74caf1;
     width: calc(300px + 0.2vw);
     transition: background-color 1s, width 0.2s;
+}
+
+.button:visited {
+    color: white;
 }
 
 .postApply {
