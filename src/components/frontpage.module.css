@@ -56,7 +56,7 @@
     width: 40%;
     min-width: 150px;
     background-color: #74cdaf;
-    font-size: calc(20px + 0.8vw);
+    font-size: calc(20px + 0.5vw);
     font-family: "Quicksand", serif;
     font-weight: 500;
     letter-spacing: 0.1em;
