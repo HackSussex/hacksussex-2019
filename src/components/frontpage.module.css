@@ -72,3 +72,7 @@
     width: 45%;
     transition: width 0.5s, background-color 0.5s;
 }
+
+.applyButton:visited {
+    color: white;
+}
