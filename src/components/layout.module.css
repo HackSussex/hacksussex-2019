@@ -18,6 +18,7 @@
         "about home challenges"
             "faq faq faq"
             "sponsors sponsors sponsors";
+    overflow: scroll;
 }
 
 .aboutSection {
