@@ -12,12 +12,14 @@
 
 .vertOpen {
     min-height: 100vh;
+    min-width: 100vw;
     opacity: 1;
     transition: height 0.2s, opacity 0.5s;
     overflow: scroll;
 }
 
 .horzOpen {
+    min-height: 100vh;
     min-width: 100vw;
     opacity: 1;
     transition: width 0.2s, opacity 0.5s;

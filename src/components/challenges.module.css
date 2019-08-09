@@ -1,5 +1,7 @@
 .challenges {
     display: grid;
+    width: 70%;
+    min-width: 1000px;
 }
 
 .challengesTitle {
