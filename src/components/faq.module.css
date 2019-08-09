@@ -1,14 +1,14 @@
 .faqSection {
     display: grid;
+    height: 85vh;
     width: 100%;
-    min-height: 100vh;
     padding-top: 1em;
     justify-items: center;
 }
 
 .faqs {
     display: grid;
-    align-items: start;
+    align-items: center;
     justify-items: center;
 }
 
