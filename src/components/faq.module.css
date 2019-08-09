@@ -1,15 +1,16 @@
 .faqSection {
     display: grid;
-    height: 100%;
     width: 100%;
-    grid-template-rows: 10% 80% 10%;
+    height: 100vh;
     padding-top: 1em;
     justify-items: center;
 }
 
 .faqs {
     display: grid;
-    align-items: center;
+    min-height: 80vh;
+    align-self: start;
+    align-items: start;
     justify-items: center;
 }
 
@@ -60,4 +61,22 @@
 .faqAnswer {
     text-align: center;
     padding-top: 0.2em;
+}
+
+.footer {
+    align-self: end;
+    background-color: #464646;
+    height: 8vh;
+    width: 100vw;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.footerInfo {
+    color: white;
+    font-size: calc(18px + 0.5vw);
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
 }
