@@ -30,6 +30,12 @@
     font-size: calc(25px + 0.4vw);
 }
 
+@media only screen and (max-width: 1000px) {
+    .nav {
+        align-items: end;
+    }
+}
+
 .vertDetail {
     color: #74cdaf;
     font-weight: 500;
