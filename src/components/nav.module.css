@@ -12,6 +12,7 @@
 }
 
 .navSectionShow {
+    min-height: 50px;
     transition: opacity 0.2s, height 0.5s;
 }
 

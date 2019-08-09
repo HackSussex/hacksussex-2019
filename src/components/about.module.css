@@ -1,8 +1,9 @@
 .aboutContainer {
     display: grid;
+    height: 100%;
     align-items: center;
     justify-items: center;
-    margin: 2em;
+    overflow: scroll;
 }
 
 .title {
@@ -17,10 +18,9 @@
 .content {
     font-size: calc(12px + 0.5vw);
     text-align: center;
-    min-width: 330px;
+    min-width: 300px;
     max-width: 1000px;
     padding: 2em;
-    margin-bottom: 2em;
 }
 
 .afterVideo {

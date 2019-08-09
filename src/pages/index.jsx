@@ -8,7 +8,7 @@ import { Sponsors } from "../components/sponsors.jsx";
 
 import logo from "../images/logo-black.png"
 
-const placeholder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at sodales mi, ut ultrices est. In in sem dolor. Curabitur ut condimentum neque, at ornare est. Maecenas mollis augue nunc, eget luctus est iaculis sit amet. Mauris nec suscipit libero, non rhoncus tellus. Vivamus gravida porta pulvinar. Maecenas dapibus tempus est non fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget nisi nec mi sagittis accumsan. Fusce aliquet accumsan sem non auctor. Ut vitae nunc cursus, placerat massa sit amet, ullamcorper sem. Vestibulum sapien est, sodales at tempor vel, rhoncus in orci. Aenean sit amet lacus lorem. Nullam sagittis a urna ullamcorper ultrices. "
+const placeholder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at sodales mi, ut ultrices est. In in sem dolor. Curabitur ut condimentum neque, at ornare est. Maecenas mollis augue nunc, eget luctus est iaculis sit amet. Mauris nec suscipit libero, non rhoncus tellus. Vivamus gravida porta pulvinar. Maecenas dapibus tempus est non fermentum."
 
 const faqs = [
     { question: "What is a hackathon?",
