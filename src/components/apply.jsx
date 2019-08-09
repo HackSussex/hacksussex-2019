@@ -19,7 +19,7 @@ const Button = ({ children }) => (
 )
 
 const MyMLH = () => {
-        const redirect = "https://hacksussex.co.uk"
+    const redirect = "https://confident-babbage-60726a.netlify.com/complete"
     const scope = "email+education+birthday"
 
     const link = `https://my.mlh.io/oauth/authorize?client_id=${clientID}&redirect_uri=${redirect}&response_type=code&scope=${scope}`
