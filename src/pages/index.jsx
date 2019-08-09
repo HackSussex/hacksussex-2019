@@ -4,6 +4,7 @@ import { FrontPage } from "../components/frontpage.jsx";
 import { Challenges } from "../components/challenges.jsx";
 import { About } from "../components/about.jsx";
 import { Faq } from "../components/faq.jsx";
+import { Sponsors } from "../components/sponsors.jsx";
 
 import logo from "../images/logo-black.png"
 
@@ -19,6 +20,8 @@ const faqs = [
     }
 ]
 
+const sponsorList = []
+
 export default () => (
     <div id="root">
         <Layout
@@ -26,7 +29,7 @@ export default () => (
             homeSection={<FrontPage />}
             challengesSection={<Challenges />}
             faqSection={<Faq faqs={faqs} />}
-            sponsorsSection={<div></div>} />
+            sponsorsSection={<Sponsors sponsors={sponsorList} />} />
         <Canvas />
     </div>
 )

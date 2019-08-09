@@ -47,6 +47,7 @@
 }
 
 .applyButton {
+    cursor: pointer;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -62,4 +63,12 @@
     color: white;
     border-radius: 5%;
     margin-bottom: 20%;
+
+    transition: width 0.5s, background-color 0.5s;
+}
+
+.applyButton:hover {
+    background-color: #57a4cd;
+    width: 45%;
+    transition: width 0.5s, background-color 0.5s;
 }

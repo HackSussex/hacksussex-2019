@@ -1,0 +1,69 @@
+.preApply {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    padding: 1.5em;
+    align-items: center;
+    justify-items: center;
+}
+
+.mlhDetail {
+    align-self: end;
+    max-width: 500px;
+    text-align: center;
+    padding-bottom: 2em;
+    font-size: calc(25px + 0.5vw);
+    font-family: "Quicksand", sans-serif;
+}
+
+.button {
+    cursor: pointer;
+    display: grid;
+    border-radius: 5%;
+    width: calc(250px + 0.2vw);
+    height: calc(60px + 0.2vw);
+    justify-items: center;
+    align-items: center;
+    align-self: start;
+    background-color: #74cdaf;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-size: calc(18px + 0.2vw);
+    font-weight: 700;
+
+    transition: background-color 1s, width 0.2s;
+}
+
+.button:hover {
+    background-color: #74caf1;
+    width: calc(300px + 0.2vw);
+    transition: background-color 1s, width 0.2s;
+}
+
+.postApply {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-gap: 5px;
+    align-items: center;
+    justify-items: center;
+    padding: 2em;
+}
+
+.postApplyText {
+    align-self: end;
+    max-width: 700px;
+    font-size: calc(25px + 0.5vw);
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+}
+
+.postApplyLink {
+    color: #74cdaf;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.postApplyLink:visited {
+    outline: none;
+}

@@ -60,9 +60,9 @@ export class Layout extends React.Component {
     }
 
     moveDown() {
-        if (this.state.faq)
+        /* if (this.state.faq)
             this.replace({ sponsor: true, direction: "vert" })
-        else
+        else */ if (!this.state.sponsors)
             this.replace({ faq: true, direction: "vert" })
         console.log(JSON.stringify(this.state))
     }
@@ -97,6 +97,7 @@ export class Layout extends React.Component {
     }
 
     render() {
+        console.log(JSON.stringify(this.state))
         return (
             <div className={styles.layout}>
                 <Panel name="about" right="home" down="faq"
@@ -128,16 +129,8 @@ export class Layout extends React.Component {
                        className={styles.faqSection}
                        open={this.state.faq}
                        collapse={this.state.direction}
-                       onUpNav={() => this.moveUp()}
-                       onDownNav={() => this.moveDown()}>
-                    { this.props.faqSection }
-                </Panel>
-                <Panel name="sponsors" up="faq"
-                       className={styles.sponsorsSection}
-                       open={this.state.sponsors}
-                       collapse={this.state.direction}
                        onUpNav={() => this.moveUp()}>
-                    { this.props.sponsorsSection }
+                    { this.props.faqSection }
                 </Panel>
             </div>
         )
