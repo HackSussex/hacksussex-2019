@@ -1,4 +1,6 @@
-# HackSussex 2019 Website
+![Logo](./src/images/logo-gradient.png)
+
+> HackSussex 2019 Website
 
 ## Developing
 Clone the repo and install all requireed npm packages:
