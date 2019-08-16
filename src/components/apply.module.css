@@ -20,7 +20,7 @@
     cursor: pointer;
     display: grid;
     border-radius: 5%;
-    width: calc(250px + 0.2vw);
+    width: calc(300px + 0.2vw);
     height: calc(60px + 0.2vw);
     justify-items: center;
     align-items: center;
@@ -35,8 +35,7 @@
 }
 
 .button:hover {
-    background-color: #74caf1;
-    width: calc(300px + 0.2vw);
+    background-color: #57a4cd;
     transition: background-color 1s, width 0.2s;
 }
 
@@ -48,7 +47,6 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-gap: 5px;
     align-items: center;
     justify-items: center;
     padding: 2em;
@@ -71,3 +69,4 @@
 .postApplyLink:visited {
     outline: none;
 }
+
