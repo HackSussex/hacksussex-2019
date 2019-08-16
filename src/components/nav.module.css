@@ -7,12 +7,12 @@
 }
 
 .nav img {
-    width: calc(15px + 3vw);
-    height: calc(15px + 3vw);
+    width: 100%;
+    max-height: 20px;
 }
 
 .navSectionShow {
-    min-height: 50px;
+    min-width: 50px;
     transition: opacity 0.2s, height 0.5s;
 }
 

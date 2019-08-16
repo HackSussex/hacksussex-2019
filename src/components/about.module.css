@@ -1,6 +1,5 @@
 .aboutContainer {
     display: grid;
-    height: 100%;
     align-items: center;
     justify-items: center;
 }
@@ -8,14 +7,14 @@
 .title {
     font-family: "Quicksand", sans-serif;
     justify-self: center;
-    font-size: calc(22px + 4vw);
+    font-size: calc(20px + 4vw);
     font-weight: 500;
     color: #74cdaf;
     text-align: center;
 }
 
 .content {
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(12px + 0.7vw);
     text-align: center;
     min-width: 300px;
     max-width: 1000px;
