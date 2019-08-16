@@ -33,6 +33,7 @@
 }
 
 .faq {
+    cursor: pointer;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -87,7 +88,6 @@
 }
 
 .collapseButton {
-    cursor: pointer;
     padding-top: 30%;
 }
 

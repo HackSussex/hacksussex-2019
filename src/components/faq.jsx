@@ -19,13 +19,13 @@ class Question extends React.Component {
 
     render() {
         return (
-            <div key={this.props.ix} className={styles.faq}>
+            <div key={this.props.ix} className={styles.faq}
+                 onClick={() => this.toggle()}>
                 <div className={styles.faqQuestion}>
                     <div className={styles.questionText}>
                         { this.props.faq.question }
                     </div>
-                    <div className={styles.collapseButton}
-                         onClick={() => this.toggle()}>
+                    <div className={styles.collapseButton}>
                         <img src={this.state.open ? upArrow : downArrow} alt="collapse-arrow" />
                     </div>
                 </div>
