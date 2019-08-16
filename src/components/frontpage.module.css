@@ -17,8 +17,8 @@
     background-color: #74cdaf;
     border-radius: 25%;
     height: 2px;
-    margin-top: 0.8em;
-    margin-bottom: 0.8em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .bigBar {
@@ -28,11 +28,11 @@
 }
 
 .date, .location {
-    font-size: calc(18px + 0.5vw);
+    font-size: calc(18px + 0.8vw);
+    font-weight: 400;
     padding-right: 0.5em;
     padding-left: 0.5em;
     font-family: "Red Hat Text", sans-serif;
-    font-weight: 400;
     text-align: center;
 }
 
@@ -44,7 +44,7 @@
 .smallBar {
     composes: bar;
     width: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .applyButton, applyButton:visited {
@@ -52,14 +52,14 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    height: 30%;
+    height: calc(50px + 1vw);
     min-height: 40px;
     width: 40%;
     min-width: 200px;
     background-color: #74cdaf;
     font-size: calc(20px + 0.5vw);
     font-family: "Quicksand", serif;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.1em;
     color: white;
     border-radius: 5%;
@@ -70,6 +70,5 @@
 
 .applyButton:hover {
     background-color: #57a4cd;
-    width: 45%;
-    transition: width 0.5s, background-color 0.5s;
+    transition: background-color 0.5s;
 }

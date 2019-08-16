@@ -7,19 +7,38 @@ import util from "./util.module.css";
 import upArrow from "../images/arrow-up.svg";
 import downArrow from "../images/arrow-down.svg";
 
-function renderFaq(faq, ix) {
-    return (
-        <div key={ix} className={styles.faq}>
-            <div className={styles.faqQuestion}>
-                { faq.question }
+class Question extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { open: false }
+    }
+
+    toggle() {
+        this.setState(s => ({ open: !s.open }))
+    }
+
+    render() {
+        return (
+            <div key={this.props.ix} className={styles.faq}>
+                <div className={styles.faqQuestion}>
+                    <div className={styles.questionText}>
+                        { this.props.faq.question }
+                    </div>
+                    <div className={styles.collapseButton}
+                         onClick={() => this.toggle()}>
+                        <img src={this.state.open ? upArrow : downArrow} alt="collapse-arrow" />
+                    </div>
+                </div>
+                <div className={styles.faqContent + " " + (!this.state.open && styles.contentClosed || "")}>
+                    <div className={styles.faqLine}>
+                    </div>
+                    <div className={styles.faqAnswer}>
+                        { this.props.faq.answer }
+                    </div>
+                </div>
             </div>
-            <div className={styles.faqLine}>
-            </div>
-            <div className={styles.faqAnswer}>
-                { faq.answer }
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 const Footer = () => (
@@ -31,7 +50,7 @@ const Footer = () => (
 )
 
 export const Faq = ({ faqs }) => {
-    const renderedFaqs = faqs.map((faq, ix) => renderFaq(faq,ix))
+    const renderedFaqs = faqs.map((faq, ix) => <Question faq={faq} ix={ix} />)
     return (
         <div className={styles.faqSection}>
             <div className={styles.faqs}>

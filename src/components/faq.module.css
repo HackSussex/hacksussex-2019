@@ -35,32 +35,57 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 1.5em;
-    padding-bottom: 2.2em;
     width: 80vw;
     max-width: 1000px;
-    grid-template-rows: 30% auto;
     grid-gap: 10px;
     background-color: white;
     box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
 }
 
 .faqQuestion {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 90% 10%;
+    padding: 1em;
+}
+
+.questionText {
     text-align: center;
     font-size: calc(22px + .5vw);
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
+    padding: 1em;
+}
+
+.faqContent {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1em;
+    padding: 0 2em 1em 2em;
+}
+
+.contentClosed {
+    display: none;
 }
 
 .faqLine {
     height: 1px;
-    width: 30%;
+    width: 70%;
     background-color: #74cdaf;
 }
 
 .faqAnswer {
     text-align: center;
     padding-top: 0.2em;
+    margin-bottom: 1em;
+}
+
+.collapseButton {
+    cursor: pointer;
+    padding-top: 30%;
 }
 
 .footer {
