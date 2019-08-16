@@ -1,5 +1,6 @@
 .panel {
     display: grid;
+    padding-top: 1em;
     align-items: center;
     justify-items: center;
     grid-template-rows: 10% 80% 10%;

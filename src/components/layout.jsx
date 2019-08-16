@@ -25,63 +25,30 @@ export class Canvas extends React.Component {
 export class Layout extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            home: true,
-            about: false,
-            sponsors: false,
-            challenges: false,
-            faq: false,
-            direction: "horz"
-        }
+        this.direction = "vert"
+        this.sequence = [
+            "home",
+            "about",
+            "faq",
+        ]
+        this.state = { ix : 0 }
     }
 
-    clearAll() {
-        Object.keys(this.state).forEach(key => this.state[key] = false)
-    }
-
-    replace(target) {
-        this.clearAll()
-        this.setState(s => Object.assign(s, target))
-    }
-
-    moveLeft() {
-        if (this.state.home)
-            this.replace({ about: true, direction: "horz" })
-        else if (this.state.challenges)
-            this.replace({ home: true, direction: "horz" })
-    }
-
-    moveRight() {
-        if (this.state.about)
-            this.replace({ home: true, direction: "horz" })
-        else if (this.state.home)
-            this.replace({ challenges: true, direction: "horz" })
-        console.log(JSON.stringify(this.state))
+    checkSec(sectionName) {
+        return this.sequence[this.state.ix] == sectionName
     }
 
     moveDown() {
-        /* if (this.state.faq)
-            this.replace({ sponsor: true, direction: "vert" })
-        else */ if (!this.state.sponsors)
-            this.replace({ faq: true, direction: "vert" })
-        console.log(JSON.stringify(this.state))
+        this.setState(s => ({ ix: Math.min(s.ix + 1, this.sequence.length-1) }))
     }
 
     moveUp() {
-        if (this.state.sponsor)
-            this.replace({ faq: true, direction: "vert" })
-        else if (this.state.faq)
-            this.replace({ home: true, direction: "vert" })
-        console.log(JSON.stringify(this.state))
+        this.setState(s => ({ ix: Math.max(s.ix - 1, 0) }))
     }
 
     handleKeyDown(event) {
         switch(event.key) {
             case "ArrowDown": this.moveDown()
-                break;
-            case "ArrowLeft": this.moveLeft()
-                    break;
-            case "ArrowRight": this.moveRight()
                 break;
             case "ArrowUp": this.moveUp()
                 break;
@@ -99,7 +66,40 @@ export class Layout extends React.Component {
     render() {
         console.log(JSON.stringify(this.state))
         return (
+
             <div className={styles.layout}>
+                <Panel name="home" down="more"
+                       className={styles.homeSection}
+                       open={this.checkSec("home")}
+                       collapse={this.direction}
+                       onDownNav={() => this.moveDown()}>
+                    { this.props.homeSection }
+                </Panel>
+
+                <Panel name="about" down="faq" up="home"
+                       className={styles.aboutSection}
+                       open={this.checkSec("about")}
+                       collapse={this.direction}
+                       onDownNav={() => this.moveDown()}
+                       onUpNav={() => this.moveUp()}>
+                    { this.props.aboutSection }
+                </Panel>
+
+                <Panel name="faq" up="about"
+                       className={styles.faqSection}
+                       open={this.checkSec("faq")}
+                       collapse={this.direction}
+                       onUpNav={() => this.moveUp()}>
+                    { this.props.faqSection }
+                </Panel>
+            </div>
+        )
+    }
+}
+
+
+    // OLD STRUCTURE
+    /*<div className={styles.layout}>
                 <Panel name="about" right="home" down="faq"
                        className={styles.aboutSection}
                        open={this.state.about}
@@ -132,14 +132,5 @@ export class Layout extends React.Component {
                        onUpNav={() => this.moveUp()}>
                     { this.props.faqSection }
                 </Panel>
-            </div>
-        )
-    }
-}
-
-
-
-
-
-
-//
+    </div>
+    */
