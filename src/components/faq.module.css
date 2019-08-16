@@ -18,10 +18,11 @@
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #74cdaf;
-    font-size: calc(22px + 3vw);
+    font-size: calc(22px + 2.5vw);
     text-align: center;
     justify-self: center;
     align-self: end;
+    margin: 0.5em 0 0.5em 0;
 }
 
 .faqsContent {
@@ -74,6 +75,7 @@
 .faqLine {
     height: 1px;
     width: 70%;
+    margin-bottom: 0.5em;
     background-color: #74cdaf;
 }
 
@@ -81,6 +83,7 @@
     text-align: center;
     padding-top: 0.2em;
     margin-bottom: 1em;
+    font-size: calc(15px + 0.8vw);
 }
 
 .collapseButton {

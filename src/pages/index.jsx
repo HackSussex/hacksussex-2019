@@ -8,7 +8,7 @@ import { Sponsors } from "../components/sponsors.jsx";
 
 import logo from "../images/logo-black.png"
 
-const placeholder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at sodales mi, ut ultrices est. In in sem dolor. Curabitur ut condimentum neque, at ornare est. Maecenas mollis augue nunc, eget luctus est iaculis sit amet. Mauris nec suscipit libero, non rhoncus tellus. Vivamus gravida porta pulvinar. Maecenas dapibus tempus est non fermentum."
+const about = "HackSussex is the society behind the annual weekend long yearly hackathon at Sussex, an event where coders and designers from all across the country come down to compete in teams to build the best tech solutions they can in just 24 straight hours, with many prizes for the winning teams at the end, from both us and our sponsor. This is a fantastic opportunity to both enjoy yourself, boost your CV and above all learn something new, be it tech related or about working in a team. There's room for the competitive and the laid back, and a chance for people of any level of experience to win prizes"
 
 const faqs = [
     { question: "What is a hackathon?",
@@ -17,7 +17,7 @@ const faqs = [
     {
         question: "How do I get there?",
         answer: "Once in Brighton, you can either grab a train from Brighton stattion to Falmer, the uni being a short walk from there. Alternatively, you may get a  25 bus from Old Steine ( a short walk from Brighton ) which goes directly to Sussex Uni."
-    },
+},
     {
         question: "How long is the hack?",
         answer: "The hacking period itself is 24 hours, however the event goes beyond that. Registration begins at 10AM on Saturday, and the closing ceremony will complete at 5PM on Sunday. Hacking hours are 12PM to 12PM Saturday to Sunday"
@@ -28,11 +28,11 @@ const faqs = [
     },
     {
         question: "Is the venue accessible?",
-        answer: "100% accessible! If you have any specific questions, please get in touch with 'admin@hacksussex.co.uk'"
+        answer: "The venue is 100% accessible! If you have any specific questions, please get in touch by emailing admin@hacksussex.co.uk"
     },
     {
         question: "How will I form a team?",
-        answer: "You can form teams both before and during the hack. If you have no team yet, don't worry! Our Slack channel will be open soon. There you can interact with potential team members (on the #team channel) or just get to know other hackers before the day of the event. If you'd rather talk to us directly about teams we encourage you to. We're aiming to provide a very welcoming and comfortable event for everyone and are more than happy to help you find people you can hack with"
+        answer: "You can form teams both before and during the hack. If you have no team yet, don't worry! Our Slack channel will be open soon. There you can interact with potential team members, or just get to know other hackers before the day of the event. If you'd rather talk to us directly about teams we encourage you to. We're aiming to provide a very welcoming and comfortable event for everyone and are more than happy to help you find people you can hack with"
     },
     {
         question: "What do I need to bring?",
@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         question: "What about food?",
-        answer: "We will be serving all meals, taking all dietary requirements into consideration Namely: vegetarian, vegan, lactose-free, and nut-free meals. For any further dietary requirements, make sure to indicate them on your application profile"
+        answer: "We will be serving all meals, taking all dietary requirements into consideration. Namely: vegetarian, vegan, lactose-free, and nut-free meals. For any further dietary requirements, make sure to indicate them on your application profile"
     }
 ]
 
@@ -49,7 +49,7 @@ const sponsorList = []
 export default () => (
     <div id="root">
         <Layout
-            aboutSection={<About title="About HackSussex">{ placeholder }</About>}
+            aboutSection={<About title="About HackSussex">{ about }</About>}
             homeSection={<FrontPage />}
             challengesSection={<Challenges />}
             faqSection={<Faq faqs={faqs} />}

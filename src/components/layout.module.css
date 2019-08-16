@@ -5,9 +5,9 @@
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    background-image: url("../images/grey-icon-scatter.png");
+    background-image: url("../images/sparse-icon-scatter.png");
     background-position: 10% 90%;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .layout {
