@@ -41,27 +41,18 @@ class Question extends React.Component {
     }
 }
 
-const Footer = () => (
-    <div className={styles.footer}>
-        <div className={styles.footerInfo}>
-            HackSussex 2019 ©
-        </div>
-    </div>
-)
-
 export const Faq = ({ faqs }) => {
     const renderedFaqs = faqs.map((faq, ix) => <Question faq={faq} ix={ix} />)
     return (
         <div className={styles.faqSection}>
             <div className={styles.faqs}>
                 <div className={styles.faqsTitle}>
-                    Frequently Asked Questions
+                    FAQ
                 </div>
                 <div className={styles.faqsContent}>
                     { renderedFaqs }
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

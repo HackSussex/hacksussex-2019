@@ -1,42 +1,27 @@
-#canvasBG {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../images/sparse-icon-scatter-2.png");
-    background-position: 10% 90%;
-    opacity: 0.5;
-}
-
 .layout {
     display: grid;
-    height: 100vh;
-    width: 100vw;
-    grid-template-areas:
-        "about home challenges"
-            "faq faq faq"
-            "sponsors sponsors sponsors";
+    grid-template-row: 1fr 1fr auto;
+    align-items: center;
+    justify-items: center;
+    grid-auto-flow: row;
+    background: url("../images/sparse-icon-scatter.png");
+    background-size: 700px;
 }
 
-.aboutSection {
-    grid-area: about;
+.footer {
+    align-self: end;
+    background-color: #464646;
+    height: 8vh;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
 }
 
-.homeSection {
-    grid-area: home;
+.footerInfo {
+    color: white;
+    font-size: calc(18px + 0.5vw);
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
 }
-
-.challengesSection {
-    grid-area: challenges;
-}
-
-.faqSection {
-    grid-area: faq;
-}
-
-.sponsorsSection {
-    grid-area: sponsors;
-}
-

@@ -1,9 +1,6 @@
 .faqSection {
     display: grid;
-    grid-gap: 10%;
-    height: 85vh;
-    width: 100%;
-    padding-top: 1em;
+    grid-gap: 2em;
     justify-items: center;
 }
 
@@ -14,7 +11,6 @@
 }
 
 .faqsTitle {
-    min-height: 10vh;
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     color: #74cdaf;
@@ -22,14 +18,12 @@
     text-align: center;
     justify-self: center;
     align-self: end;
-    margin: 0.5em 0 0.5em 0;
 }
 
 .faqsContent {
     display: grid;
-    grid-gap: 4vh;
+    grid-gap: 1.5em;
     justify-items: center;
-    padding: 1em;
 }
 
 .faq {
@@ -37,8 +31,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    width: 80vw;
-    max-width: 1000px;
+    max-width: 500px;
     grid-gap: 10px;
     background-color: white;
     box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
@@ -46,7 +39,6 @@
 
 .faqQuestion {
     display: grid;
-    width: 100%;
     align-items: center;
     justify-items: center;
     grid-template-columns: 90% 10%;
@@ -55,10 +47,9 @@
 
 .questionText {
     text-align: center;
-    font-size: calc(22px + .5vw);
+    font-size: calc(15px + .5vw);
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
-    padding: 1em;
 }
 
 .faqContent {
@@ -91,20 +82,4 @@
     padding-top: 30%;
 }
 
-.footer {
-    align-self: end;
-    background-color: #464646;
-    height: 8vh;
-    width: 100vw;
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-    justify-items: center;
-}
 
-.footerInfo {
-    color: white;
-    font-size: calc(18px + 0.5vw);
-    font-weight: 500;
-    font-family: "Quicksand", sans-serif;
-}

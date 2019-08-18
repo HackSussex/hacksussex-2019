@@ -22,6 +22,15 @@ export class Canvas extends React.Component {
     }
 }
 
+const Footer = () => (
+    <div className={styles.footer}>
+        <div className={styles.footerInfo}>
+            HackSussex 2019 ©
+        </div>
+    </div>
+)
+
+
 export class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -92,6 +101,8 @@ export class Layout extends React.Component {
                        onUpNav={() => this.moveUp()}>
                     { this.props.faqSection }
                 </Panel>
+
+                <Footer />
             </div>
         )
     }

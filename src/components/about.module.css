@@ -1,5 +1,7 @@
 .aboutContainer {
     display: grid;
+    grid-gap: 1em;
+    max-width: 800px;
     align-items: center;
     justify-items: center;
 }
@@ -7,20 +9,35 @@
 .title {
     font-family: "Quicksand", sans-serif;
     justify-self: center;
-    font-size: calc(20px + 4vw);
+    font-size: calc(20px + 2vw);
     font-weight: 500;
     color: #74cdaf;
     text-align: center;
 }
 
 .content {
-    font-size: calc(12px + 0.7vw);
+    font-size: calc(10px + 0.3vw);
+    max-width: 500px;
     text-align: center;
-    min-width: 300px;
-    max-width: 1000px;
-    padding: 2em;
+    padding: 1em;
 }
 
 .afterVideo {
+    display: none;
     font-size: calc(20px + 0.2vw);
+}
+
+.afterVideoMinimal {
+    grid-auto-flow: column;
+    font-size: calc(10px + 0.3vw);
+}
+
+@media only screen and (min-width: 400px) {
+    .afterVideo {
+        display: block;
+    }
+
+    .afterVideoMinimal {
+        display: none;
+    }
 }
