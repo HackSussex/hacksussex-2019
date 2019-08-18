@@ -1,6 +1,6 @@
 .frontPage {
     display: grid;
-    grid-template-rows: 20% 5% 10% 5% 20% auto;
+    /* grid-template-rows: 20% 5% 10% 5% 20% auto; */
     justify-items: center;
     align-items: center;
 }
