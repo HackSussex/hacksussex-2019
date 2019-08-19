@@ -29,15 +29,15 @@ This is done automatically by Netlify when any changes are pushed to the repo
 ### Urgent
 - [x] Home Page / Front Page
 
-- [ ] About 
+- [x] About 
   - [x] Design
-  - [X] Content
+  - [ ] Content
 
 - [ ] Sponsors
 
 - [x] FAQ
-  - [ ] Design
-  - [ ] Content
+  - [x] Design
+  - [x] Content
   
 - [ ] Contact
 
@@ -46,5 +46,5 @@ This is done automatically by Netlify when any changes are pushed to the repo
 - [ ] Challenge Section
 
 ## General TODO
-- [ ] Reorder component heirarchy, separating panels from layout
+- [x] Reorder component heirarchy, separating panels from layout
 - [ ] Decouple content from code, with markdown
