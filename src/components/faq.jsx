@@ -41,14 +41,6 @@ class Question extends React.Component {
     }
 }
 
-const Footer = () => (
-    <div className={styles.footer}>
-        <div className={styles.footerInfo}>
-            HackSussex 2019 ©
-        </div>
-    </div>
-)
-
 export const Faq = ({ faqs }) => {
     const renderedFaqs = faqs.map((faq, ix) => <Question faq={faq} ix={ix} />)
     return (
@@ -61,7 +53,6 @@ export const Faq = ({ faqs }) => {
                     { renderedFaqs }
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

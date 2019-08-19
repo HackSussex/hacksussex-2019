@@ -1,5 +1,5 @@
 import React from "react";
-import { Canvas, Layout, Panel } from "../components/layout.jsx";
+import { Layout } from "../components/layout.jsx";
 import { FrontPage } from "../components/frontpage.jsx";
 import { Challenges } from "../components/challenges.jsx";
 import { About } from "../components/about.jsx";
@@ -54,6 +54,5 @@ export default () => (
             challengesSection={<Challenges />}
             faqSection={<Faq faqs={faqs} />}
             sponsorsSection={<Sponsors sponsors={sponsorList} />} />
-        <Canvas />
     </div>
 )

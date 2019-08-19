@@ -1,5 +1,7 @@
 .messagePage {
     display: grid;
+    background-image: url("../images/sparse-icon-scatter-light.png");
+    background-size: 200%;
     width: 100vw;
     height: 100vh;
     padding: 20vh 1em 40vh 1em;

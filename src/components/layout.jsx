@@ -10,15 +10,14 @@ import leftArrow from "../images/arrow-left.svg";
 import rightArrow from "../images/arrow-right.svg"
 import downArrow from "../images/arrow-down.svg";
 
+const Footer = () => (
+    <div className={styles.footer}>
+        <div className={styles.footerInfo}>
+            HackSussex 2019 ©
+        </div>
+    </div>
+)
 
-export class Canvas extends React.Component {
-    render() {
-        return (
-            <div ref="canvasBG" id={styles.canvasBG}>
-            </div>
-        )
-    }
-}
 
 export class Layout extends React.Component {
     constructor(props) {
@@ -94,6 +93,8 @@ export class Layout extends React.Component {
                        collapse={this.direction}>
                     { this.props.faqSection }
                 </Panel>
+
+                <Footer />
             </div>
         )
     }

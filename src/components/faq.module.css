@@ -1,7 +1,6 @@
 .faqSection {
     display: grid;
     grid-gap: 10%;
-    height: 85vh;
     justify-items: center;
 }
 
@@ -88,20 +87,3 @@
     min-width: 10px;
 }
 
-.footer {
-    align-self: end;
-    background-color: #464646;
-    height: 8vh;
-    width: 100vw;
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-    justify-items: center;
-}
-
-.footerInfo {
-    color: white;
-    font-size: calc(8px + 0.5vw);
-    font-weight: 500;
-    font-family: "Quicksand", sans-serif;
-}
