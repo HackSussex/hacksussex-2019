@@ -30,11 +30,14 @@ export const FrontPage = ({ children }) => (
         <Link href="/application" className={styles.applyButton}>
             APPLY NOW
         </Link>
-        <p className={styles.navGuideKey}>
-            Press down key or click arrow for more
-        </p>
-        <p className={styles.navGuideTouch}>
-            Swipe down for more
-        </p>
+        { /*! /Mobi|Android/i.test(navigator.userAgent) ?
+          <p className={styles.navGuideKey}>
+              Press down key or click arrow for more
+          </p>
+          :
+          <p className={styles.navGuideTouch}>
+              Swipe down for more
+          </p>*/
+        }
     </div>
 )

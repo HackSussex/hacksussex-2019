@@ -29,7 +29,7 @@ export class Layout extends React.Component {
             "about",
             "faq",
         ]
-        this.state = { ix : 0, scrollPos: window.scrollY, ticking: false }
+        this.state = { ix : 0 }
     }
 
     checkSec(sectionName) {
@@ -62,13 +62,13 @@ export class Layout extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener("keydown", (ev) => this.handleKeyDown(ev), true)
-        document.addEventListener("wheel", _.throttle(this.onScroll,3000), true)
+        window.addEventListener("keydown", (ev) => this.handleKeyDown(ev), true)
+        window.addEventListener("wheel", _.throttle(this.onScroll,3000), true)
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", (ev) => this.handleKeyDown(ev))
-        document.removeEventListener("scroll", (ev) => _.throttle(this.onScroll, 300)(ev))
+        window.removeEventListener("keydown", (ev) => this.handleKeyDown(ev))
+        window.removeEventListener("scroll", (ev) => _.throttle(this.onScroll, 300)(ev))
     }
 
     render() {

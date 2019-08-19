@@ -60,7 +60,7 @@
     letter-spacing: 0.1em;
     color: white;
     border-radius: 5%;
-    margin-bottom: 20%;
+    margin-bottom: 40%;
 
     transition: width 0.5s, background-color 0.5s;
 }
@@ -70,10 +70,19 @@
     transition: background-color 0.5s;
 }
 
+.navGuide {
+    align-self: end;
+    margin: 0;
+    font-size: calc(12px + 0.2vw);
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    color: #74cdaf;
+}
+
 .navGuideKey {
-    display: none;
+    composes: navGuide;
 }
 
 .navGuideTouch {
-    display: none;
+    composes: navGuide;
 }
