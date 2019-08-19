@@ -58,7 +58,6 @@ export default class Nav extends React.Component {
                  onMouseEnter={(ev) => this.handleMouseEnter(ev)}
                  onMouseLeave={(ev) => this.handleMouseLeave(ev)}
                  onClick={this.props.navAction}>
-                { ifVisible(this.state.active, this.props.detail) }
                 { ifVisible(!this.state.active, icon) }
             </div>
         )

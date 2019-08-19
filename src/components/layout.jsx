@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import Nav from "./nav.jsx";
 import Panel from "./panel.jsx";
 import "./global.css";
@@ -11,9 +12,6 @@ import downArrow from "../images/arrow-down.svg";
 
 
 export class Canvas extends React.Component {
-    componentDidMount() {
-    }
-
     render() {
         return (
             <div ref="canvasBG" id={styles.canvasBG}>
@@ -21,15 +19,6 @@ export class Canvas extends React.Component {
         )
     }
 }
-
-const Footer = () => (
-    <div className={styles.footer}>
-        <div className={styles.footerInfo}>
-            HackSussex 2019 ©
-        </div>
-    </div>
-)
-
 
 export class Layout extends React.Component {
     constructor(props) {
@@ -40,7 +29,7 @@ export class Layout extends React.Component {
             "about",
             "faq",
         ]
-        this.state = { ix : 0 }
+        this.state = { ix : 0, scrollPos: window.scrollY, ticking: false }
     }
 
     checkSec(sectionName) {
@@ -64,19 +53,30 @@ export class Layout extends React.Component {
         }
     }
 
+    scroll(pos) {
+        console.log("fire")
+    }
+
+    onScroll(e) {
+        console.log("fir")
+    }
+
     componentDidMount() {
+        this.refs.layout.addEventListener("keydown", (ev) => this.handleKeyDown(ev))
         window.addEventListener("keydown", (ev) => this.handleKeyDown(ev))
+        window.addEventListener("wheel", _.throttle(this.onScroll,3000))
     }
 
     componentWillUnmount() {
         window.removeEventListener("keydown", (ev) => this.handleKeyDown(ev))
+        window.removeEventListener("scroll", (ev) => _.throttle(this.onScroll, 300)(ev))
     }
 
     render() {
-        console.log(JSON.stringify(this.state))
         return (
 
-            <div className={styles.layout}>
+            <div className={styles.layout}
+                 ref="layout">
                 <Panel name="home" down="more"
                        className={styles.homeSection}
                        open={this.checkSec("home")}
@@ -101,8 +101,6 @@ export class Layout extends React.Component {
                        onUpNav={() => this.moveUp()}>
                     { this.props.faqSection }
                 </Panel>
-
-                <Footer />
             </div>
         )
     }

@@ -1,39 +1,33 @@
 .frontPage {
     display: grid;
-    height: 90vh;
-    grid-template-rows: 3fr 1fr 3fr;
     justify-items: center;
+    align-items: center;
 }
 
 .logo {
     display: grid;
     max-width: 400px;
-    align-self: end;
-    min-width: 180px;
-    align-items: end;
-}
-
-.dateLoc {
-    display: grid;
-    justify-items: center;
-    align-items: center;
+    min-width: 100px;
     align-self: start;
-    grid-gap: 0.5em;
+    align-items: center;
 }
 
 .bar {
     background-color: #74cdaf;
     border-radius: 25%;
     height: 1px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .bigBar {
     composes: bar;
     width: 6em;
+    margin-top: 0.1em;
 }
 
 .date, .location {
-    font-size: calc(12px + 0.2vw);
+    font-size: calc(12px + 0.4vw);
     font-weight: 400;
     padding-right: 0.5em;
     padding-left: 0.5em;
@@ -49,25 +43,24 @@
 .smallBar {
     composes: bar;
     width: 2em;
+    margin-bottom: 2em;
 }
 
 .applyButton, applyButton:visited {
     cursor: pointer;
     display: grid;
-    align-self: start;
     align-items: center;
     justify-items: center;
-    height: calc(50px + 1vw);
-    width: calc(150px + 0.1vw);
-    height: calc(40px + 0.1vw);
+    height: calc(30px + 1vw);
+    width: calc(150px + 1vw);
     background-color: #74cdaf;
-    font-size: calc(13px + 0.1vw);
+    font-size: calc(12px + 0.5vw);
     font-family: "Quicksand", serif;
     font-weight: 700;
     letter-spacing: 0.1em;
     color: white;
     border-radius: 5%;
-    margin-top: calc(15px + 0.1vw);
+    margin-bottom: 20%;
 
     transition: width 0.5s, background-color 0.5s;
 }

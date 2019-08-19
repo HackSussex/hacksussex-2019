@@ -1,21 +1,59 @@
 .panel {
     display: grid;
-    width: 100vw;
+    padding-top: 1em;
     align-items: center;
     justify-items: center;
-    padding: 1em;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-areas:
-        "content"
-            "bot";
+        "up up up"
+            "left content right"
+            "bot bot bot";
+    overflow: auto;
 }
 
+.vertOpen {
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 1;
+    transition: height 0.2s, opacity 0.5s;
+}
 
+.horzOpen {
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 1;
+    transition: width 0.2s, opacity 0.5s;
+}
+
+.vertClosed {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: height 0.2s, opacity 0.5s;
+    overflow: hidden;
+}
+
+.horzClosed {
+    width: 0;
+    opacity: 0;
+    transition: width 0.2s, opacity 0.1s;
+    overflow: hidden;
+}
+
+.upNav {
+    grid-area: up;
+}
+.rightNav {
+    grid-area: right;
+}
 .botNav {
     grid-area: bot;
-    align-self: end;
+}
+.leftNav {
+    grid-area: left;
 }
 
 .panelContent {
     grid-area: content;
-    align-self: end;
 }
