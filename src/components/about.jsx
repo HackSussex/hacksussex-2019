@@ -18,18 +18,6 @@ export const About = ({ children, title }) => (
         <div className={styles.content}>
             { children }
         </div>
-        <div className={styles.afterVideoMinimal}>
-            <Link name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM">
-                Watch the 2017 after-video
-            </Link>
-        </div>
-        <div className={styles.afterVideo}>
-            <p>Watch the 2017 after-video:</p>
-
-            <iframe src="https://player.vimeo.com/video/244298907?loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <script src="https://player.vimeo.com/api/player.js"></script>
-
-        </div>
     </div>
 )
 /*

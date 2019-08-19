@@ -48,7 +48,7 @@ export const FrontPage = ({ children }) => (
              </p>*/
         }
         <div className={styles.afterVideo}>
-            <iframe src="https://player.vimeo.com/video/244298907?loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/244298907?loop=1&autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
         <div className={styles.afterVideoMinimal}>
