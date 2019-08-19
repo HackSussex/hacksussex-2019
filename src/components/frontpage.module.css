@@ -69,3 +69,11 @@
     background-color: #57a4cd;
     transition: background-color 0.5s;
 }
+
+.navGuideKey {
+    display: none;
+}
+
+.navGuideTouch {
+    display: none;
+}

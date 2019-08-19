@@ -2,8 +2,6 @@
     display: grid;
     grid-gap: 10%;
     height: 85vh;
-    width: 100%;
-    padding-top: 1em;
     justify-items: center;
 }
 
@@ -22,7 +20,6 @@
     text-align: center;
     justify-self: center;
     align-self: end;
-    margin: 0.5em 0 0.5em 0;
 }
 
 .faqsContent {
@@ -37,25 +34,24 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    width: 80vw;
-    max-width: 1000px;
-    grid-gap: 10px;
+    width: calc(100px + 30vw);
     background-color: white;
     box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
 }
 
 .faqQuestion {
     display: grid;
+    grid-auto-flow: column;
     width: 100%;
+    grid-template-columns: 95% 5%;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 90% 10%;
-    padding: 1em;
+    padding: 0.2em 0.7em 0.2em 0.7em;
 }
 
 .questionText {
     text-align: center;
-    font-size: calc(22px + .5vw);
+    font-size: calc(11px + 0.5vw);
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
     padding: 1em;
@@ -66,7 +62,7 @@
     justify-items: center;
     align-items: center;
     grid-gap: 1em;
-    padding: 0 2em 1em 2em;
+    padding: 0 1.2em 0.5em 1.2em;
 }
 
 .contentClosed {
@@ -84,11 +80,12 @@
     text-align: center;
     padding-top: 0.2em;
     margin-bottom: 1em;
-    font-size: calc(15px + 0.8vw);
+    font-size: calc(10px + 0.5vw);
 }
 
-.collapseButton {
-    padding-top: 30%;
+.collapseButton img {
+    margin-bottom: 20%;
+    min-width: 10px;
 }
 
 .footer {
@@ -104,7 +101,7 @@
 
 .footerInfo {
     color: white;
-    font-size: calc(18px + 0.5vw);
+    font-size: calc(8px + 0.5vw);
     font-weight: 500;
     font-family: "Quicksand", sans-serif;
 }
