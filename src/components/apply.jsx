@@ -5,9 +5,8 @@ import util from "./util.module.css";
 import logo from "../images/logo-gradient.png";
 import Link from "./link.jsx";
 
-const clientID = "7887ee06fcb554970bebc4473e4e442bb6a06b883c840c732c6b773ec54d971d"
-const clientSecret = "9baf3f59ba83df9e6d7c95fd027cd7896ce80bf3c070a3f1af62782fec39f67f"
-
+const clientID = "7927d1dfdf4d60c0ec15a87262793e12880bc37a094bc535caf53a334b2ee0eb"
+const clientSecret = "c4eedbaee6a4d7e6c48af8e5232ec20b0bb24eae1b03a2cc52ce0dffef0c369b"
 
 const Button = ({ children, href }) => (
     <Link href={href} className={styles.button}>
@@ -16,10 +15,10 @@ const Button = ({ children, href }) => (
 )
 
 const MyMLH = () => {
-    const redirect = "https://confident-babbage-60726a.netlify.com/complete"
-    const scope = "email+education+birthday"
+    const testRedirect = "https://confident-babbage-60726a.netlify.com/complete"
+    const productionRedirect = "https://hacksussex.com/complete"
 
-    const link = `https://my.mlh.io/oauth/authorize?client_id=${clientID}&redirect_uri=${redirect}&response_type=code&scope=${scope}`
+    const link = `https://my.mlh.io/oauth/authorize?client_id=${clientID}&redirect_uri=${testRedirect}&response_type=code&scope=${scope}`
 
     return (
         <Button href={link}>
