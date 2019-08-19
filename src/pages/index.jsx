@@ -8,7 +8,7 @@ import { Sponsors } from "../components/sponsors.jsx";
 
 import logo from "../images/logo-black.png"
 
-const about = "HackSussex is the society behind the annual weekend long yearly hackathon at Sussex, an event where coders and designers from all across the country come down to compete in teams to build the best tech solutions they can in just 24 straight hours, with many prizes for the winning teams at the end, from both us and our sponsor. This is a fantastic opportunity to both enjoy yourself, boost your CV and above all learn something new, be it tech related or about working in a team. There's room for the competitive and the laid back, and a chance for people of any level of experience to win prizes!"
+const about = "HackSussex is the society behind the annual weekend-long hackathon at Sussex. An event where passionate programmers and designers from all across the country come down to build the best tech inventions and solutions they can in just 24 hours, with many prizes for the winning teams. This is a fantastic opportunity to enjoy yourself, boost your CV, and above all learn something new. Be it tech and software skills or teamwork experience. There's room for both the competitive and the laid back, and a chance for people of any level of experience to win prizes. The event is entirely free and paid for by our lovely sponsors, so make sure to apply soon!"
 
 const faqs = [
     { question: "What is a hackathon?",
