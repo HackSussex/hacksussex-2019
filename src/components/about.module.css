@@ -7,20 +7,46 @@
 .title {
     font-family: "Quicksand", sans-serif;
     justify-self: center;
-    font-size: calc(20px + 4vw);
+    font-size: calc(20px + 2vw);
     font-weight: 500;
     color: #74cdaf;
     text-align: center;
 }
 
 .content {
-    font-size: calc(12px + 0.7vw);
+    font-size: calc(12px + 0.2vw);
     text-align: center;
-    min-width: 300px;
-    max-width: 1000px;
+    max-width: calc(400px + 10vw);
     padding: 2em;
+    padding-bottom: 0;
+}
+
+.afterVideo p {
+    text-align: center;
+    font-size: calc(14px + 0.2vw);
+    padding-top: 2em;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+}
+
+.afterVideoMinimal {
+    font-size: calc(14px + 0.2vw);
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    padding-top: 1em;
 }
 
 .afterVideo {
-    font-size: calc(20px + 0.2vw);
+    display: none;
+    width: calc(500px + 0.5vw);
+}
+
+@media only screen and (min-width: 600px) {
+    .afterVideoMinimal {
+        display: none;
+    }
+
+    .afterVideo {
+        display: grid;
+    }
 }

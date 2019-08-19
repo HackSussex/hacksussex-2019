@@ -55,7 +55,7 @@ export const Faq = ({ faqs }) => {
         <div className={styles.faqSection}>
             <div className={styles.faqs}>
                 <div className={styles.faqsTitle}>
-                    Frequently Asked Questions
+                    FAQ
                 </div>
                 <div className={styles.faqsContent}>
                     { renderedFaqs }

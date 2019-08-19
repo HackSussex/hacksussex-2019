@@ -18,9 +18,14 @@ export const About = ({ children, title }) => (
         <div className={styles.content}>
             { children }
         </div>
+        <div className={styles.afterVideoMinimal}>
+            <Link name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM">
+                Watch the 2017 after-video
+            </Link>
+        </div>
         <div className={styles.afterVideo}>
-            <strong>After-Video: </strong>
-            <Link name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM"> 2017 </Link>
+            <p>Watch the 2017 after-video:</p>
+            <iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/szez7KklvlM?controls=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 )

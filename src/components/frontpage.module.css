@@ -2,12 +2,12 @@
     display: grid;
     justify-items: center;
     align-items: center;
+    margin-top: 20%;
 }
 
 .logo {
     display: grid;
-    max-width: 400px;
-    min-width: 100px;
+    width: calc(150px + 22vw);
     align-self: start;
     align-items: center;
 }

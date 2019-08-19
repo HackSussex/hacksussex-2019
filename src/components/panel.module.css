@@ -1,15 +1,14 @@
 .panel {
     display: grid;
-    padding-top: 1em;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 10% 80% 10%;
-    grid-template-columns: 10% 80% 10%;
+    /* grid-template-rows: 10% 80% 10%; */
     grid-template-areas:
         "up up up"
-            "left content right"
+            "content content content"
             "bot bot bot";
     overflow: auto;
+    padding-bottom: 1em;
 }
 
 .vertOpen {
@@ -43,12 +42,14 @@
 
 .upNav {
     grid-area: up;
+    align-self: start;
 }
 .rightNav {
     grid-area: right;
 }
 .botNav {
     grid-area: bot;
+    align-self: end;
 }
 .leftNav {
     grid-area: left;
