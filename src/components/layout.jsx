@@ -82,11 +82,10 @@ export class Layout extends React.Component {
                     { this.props.homeSection }
                 </Panel>
 
-                <Panel name="about" down="faq"
+                <Panel name="about"
                        className={styles.aboutSection}
                        open={this.checkSec("about")}
-                       collapse={this.direction}
-                       onDownNav={() => this.moveDown()}>
+                       collapse={this.direction}>
                     { this.props.aboutSection }
                 </Panel>
 
