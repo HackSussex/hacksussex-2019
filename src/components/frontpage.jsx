@@ -3,6 +3,7 @@ import styles from "./frontpage.module.css";
 import util from "./util.module.css";
 
 import logo from "../images/logo-gradient.png";
+import background from "../images/sparse-icon-scatter-light.png";
 
 const Link = ({ children, href, className }) => (
     <a href={href} className={util.clearLink + " " + className}>
@@ -23,18 +24,33 @@ export const FrontPage = ({ children }) => (
         <div className={styles.logo}>
             <img src={logo} alt="Main Logo" />
         </div>
-        <div className={styles.bigBar}>
+
+        <div className={styles.afterVideo}>
+            <iframe src="https://player.vimeo.com/video/244298907?loop=1&autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+            <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
-        <div className={styles.date}>
-            9th - 10th November, 2019
+        <div className={styles.afterVideoMinimal}>
+            <LinkLined name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM">
+                Watch the 2017 after-video
+            </LinkLined>
         </div>
-        <div className={styles.medBar}>
+
+
+        <div className={styles.info}>
+            <div className={styles.bigBar}>
+            </div>
+            <div className={styles.date}>
+                9th - 10th November, 2019
+            </div>
+            <div className={styles.medBar}>
+            </div>
+            <div className={styles.location}>
+                University of Sussex, Brighton
+            </div>
+            <div className={styles.smallBar}>
+            </div>
         </div>
-        <div className={styles.location}>
-            University of Sussex, Brighton
-        </div>
-        <div className={styles.smallBar}>
-        </div>
+
         <Link href="/application" className={styles.applyButton}>
             APPLY NOW
         </Link>
@@ -47,15 +63,5 @@ export const FrontPage = ({ children }) => (
              Swipe down for more
              </p>*/
         }
-        <div className={styles.afterVideo}>
-            <iframe src="https://player.vimeo.com/video/244298907?loop=1&autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <script src="https://player.vimeo.com/api/player.js"></script>
-        </div>
-        <div className={styles.afterVideoMinimal}>
-            <LinkLined name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM">
-                Watch the 2017 after-video
-            </LinkLined>
-        </div>
-
     </div>
 )

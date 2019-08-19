@@ -1,15 +1,28 @@
 .frontPage {
     display: grid;
+    grid-template-areas:
+        "logo"
+            "info"
+            "apply"
+            "afterVid";
     justify-items: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .logo {
     display: grid;
-    width: calc(150px + 22vw);
+    width: calc(150px + 20vw);
     align-self: start;
     align-items: center;
+    grid-area: logo;
+}
+
+.info {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-area: info;
 }
 
 .bar {
@@ -47,14 +60,15 @@
 }
 
 .applyButton, applyButton:visited {
+    grid-area: apply;
     cursor: pointer;
     display: grid;
     align-items: center;
     justify-items: center;
     height: calc(30px + 1vw);
-    width: calc(150px + 1vw);
+    width: calc(150px + 2vw);
     background-color: #74cdaf;
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(12px + 0.3vw);
     font-family: "Quicksand", serif;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -87,17 +101,23 @@
     composes: navGuide;
 }
 
+.afterVideo {
+    display: none;
+    justify-items: center;
+    grid-area: afterVid;
+}
+
+.afterVideo iframe {
+    width: 120%;
+    height: 100%;
+}
+
 .afterVideo p {
     text-align: center;
     font-size: calc(14px + 0.2vw);
     padding-top: 2em;
     font-weight: 700;
     font-family: "Quicksand", sans-serif;
-}
-
-.afterVideo iframe {
-    width: calc(500px + 0.2vw);
-    height: calc(200px + 0.2vw);
 }
 
 .afterVideoMinimal {
@@ -107,11 +127,6 @@
     padding-top: 1em;
     text-decoration: underline;
     color: #74cdaf;
-}
-
-.afterVideo {
-    display: none;
-    width: calc(500px + 0.5vw);
 }
 
 @media only screen and (min-width: 600px) {
