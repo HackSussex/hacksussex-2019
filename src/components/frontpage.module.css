@@ -1,6 +1,6 @@
 .frontPage {
     display: grid;
-    min-height: 85vh;
+    min-height: 80vh;
     grid-template-areas:
         "logo"
             "info"
@@ -10,12 +10,13 @@
     align-items: center;
     margin-top: 15%;
     padding: 0.5em;
+    overflow-x: hidden;
 }
 
 .logo {
     display: grid;
     width: calc(120px + 22vw);
-    align-self: start;
+    align-self: end;
     align-items: center;
     grid-area: logo;
     margin-bottom: 10px;
@@ -70,6 +71,7 @@
     grid-area: apply;
     cursor: pointer;
     display: grid;
+    align-self: start;
     align-items: center;
     justify-items: center;
     height: calc(30px + 1vw);
@@ -138,7 +140,7 @@
     color: #74cdaf;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
     .afterVideoMinimal {
         display: none;
     }
