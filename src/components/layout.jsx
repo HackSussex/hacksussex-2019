@@ -63,12 +63,10 @@ export class Layout extends React.Component {
 
     componentDidMount() {
         window.addEventListener("keydown", (ev) => this.handleKeyDown(ev), true)
-        window.addEventListener("wheel", _.throttle(this.onScroll,3000), true)
     }
 
     componentWillUnmount() {
         window.removeEventListener("keydown", (ev) => this.handleKeyDown(ev))
-        window.removeEventListener("scroll", (ev) => _.throttle(this.onScroll, 300)(ev))
     }
 
     render() {
