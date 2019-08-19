@@ -8,11 +8,12 @@
     justify-items: center;
     align-items: center;
     margin-top: 15%;
+    padding: 0.5em;
 }
 
 .logo {
     display: grid;
-    width: calc(150px + 20vw);
+    width: calc(120px + 20vw);
     align-self: start;
     align-items: center;
     grid-area: logo;
@@ -40,7 +41,7 @@
 }
 
 .date, .location {
-    font-size: calc(12px + 0.4vw);
+    font-size: calc(10px + 0.4vw);
     font-weight: 400;
     padding-right: 0.5em;
     padding-left: 0.5em;
@@ -105,6 +106,8 @@
     display: none;
     justify-items: center;
     grid-area: afterVid;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .afterVideo iframe {
