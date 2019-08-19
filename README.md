@@ -31,11 +31,16 @@ This is done automatically by Netlify when any changes are pushed to the repo
 
 - [ ] About 
   - [x] Design
-  - [ ] Content
+  - [X] Content
 
 - [ ] Sponsors
 
-- [ ] FAQ
+- [x] FAQ
+  - [ ] Design
+  - [ ] Content
+  
+- [ ] Contact
+
 
 ### Non-Urgent / Day-of-Hackathon
 - [ ] Challenge Section

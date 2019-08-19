@@ -25,7 +25,14 @@ export const About = ({ children, title }) => (
         </div>
         <div className={styles.afterVideo}>
             <p>Watch the 2017 after-video:</p>
-            <iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/szez7KklvlM?controls=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <iframe src="https://player.vimeo.com/video/244298907?loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+
         </div>
     </div>
 )
+/*
+   <iframe width="500" height="300" src="https://www.youtube-nocookie.com/embed/szez7KklvlM?controls=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ */

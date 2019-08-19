@@ -59,8 +59,8 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     color: white;
+    margin-bottom: 10%;
     border-radius: 5%;
-    margin-bottom: 40%;
 
     transition: width 0.5s, background-color 0.5s;
 }
@@ -85,4 +85,41 @@
 
 .navGuideTouch {
     composes: navGuide;
+}
+
+.afterVideo p {
+    text-align: center;
+    font-size: calc(14px + 0.2vw);
+    padding-top: 2em;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+}
+
+.afterVideo iframe {
+    width: calc(500px + 0.2vw);
+    height: calc(200px + 0.2vw);
+}
+
+.afterVideoMinimal {
+    font-size: calc(12px + 0.2vw);
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    padding-top: 1em;
+    text-decoration: underline;
+    color: #74cdaf;
+}
+
+.afterVideo {
+    display: none;
+    width: calc(500px + 0.5vw);
+}
+
+@media only screen and (min-width: 600px) {
+    .afterVideoMinimal {
+        display: none;
+    }
+
+    .afterVideo {
+        display: grid;
+    }
 }

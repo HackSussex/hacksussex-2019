@@ -10,6 +10,14 @@ const Link = ({ children, href, className }) => (
     </a>
 )
 
+export const LinkLined = ({ name, href, children }) => (
+    <span className={util.link}>
+        <a id={name} href={href} target="_blank">
+            { children }
+        </a>
+    </span>
+)
+
 export const FrontPage = ({ children }) => (
     <div className={styles.frontPage}>
         <div className={styles.logo}>
@@ -31,13 +39,23 @@ export const FrontPage = ({ children }) => (
             APPLY NOW
         </Link>
         { /*! /Mobi|Android/i.test(navigator.userAgent) ?
-          <p className={styles.navGuideKey}>
-              Press down key or click arrow for more
-          </p>
-          :
-          <p className={styles.navGuideTouch}>
-              Swipe down for more
-          </p>*/
+             <p className={styles.navGuideKey}>
+             Press down key or click arrow for more
+             </p>
+             :
+             <p className={styles.navGuideTouch}>
+             Swipe down for more
+             </p>*/
         }
+        <div className={styles.afterVideo}>
+            <iframe src="https://player.vimeo.com/video/244298907?loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div className={styles.afterVideoMinimal}>
+            <LinkLined name="aftervid-2017" href="https://www.youtube.com/watch?v=szez7KklvlM">
+                Watch the 2017 after-video
+            </LinkLined>
+        </div>
+
     </div>
 )

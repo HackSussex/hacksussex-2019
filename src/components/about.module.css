@@ -20,33 +20,3 @@
     padding: 2em;
     padding-bottom: 0;
 }
-
-.afterVideo p {
-    text-align: center;
-    font-size: calc(14px + 0.2vw);
-    padding-top: 2em;
-    font-weight: 700;
-    font-family: "Quicksand", sans-serif;
-}
-
-.afterVideoMinimal {
-    font-size: calc(14px + 0.2vw);
-    font-family: "Quicksand", sans-serif;
-    font-weight: 700;
-    padding-top: 1em;
-}
-
-.afterVideo {
-    display: none;
-    width: calc(500px + 0.5vw);
-}
-
-@media only screen and (min-width: 600px) {
-    .afterVideoMinimal {
-        display: none;
-    }
-
-    .afterVideo {
-        display: grid;
-    }
-}

@@ -33,7 +33,7 @@ export class Layout extends React.Component {
     }
 
     checkSec(sectionName) {
-        return this.sequence[this.state.ix] == sectionName
+        return true // this.sequence[this.state.ix] == sectionName
     }
 
     moveDown() {
@@ -82,20 +82,18 @@ export class Layout extends React.Component {
                     { this.props.homeSection }
                 </Panel>
 
-                <Panel name="about" down="faq" up="home"
+                <Panel name="about" down="faq"
                        className={styles.aboutSection}
                        open={this.checkSec("about")}
                        collapse={this.direction}
-                       onDownNav={() => this.moveDown()}
-                       onUpNav={() => this.moveUp()}>
+                       onDownNav={() => this.moveDown()}>
                     { this.props.aboutSection }
                 </Panel>
 
-                <Panel name="faq" up="about"
+                <Panel name="faq"
                        className={styles.faqSection}
                        open={this.checkSec("faq")}
-                       collapse={this.direction}
-                       onUpNav={() => this.moveUp()}>
+                       collapse={this.direction}>
                     { this.props.faqSection }
                 </Panel>
             </div>
