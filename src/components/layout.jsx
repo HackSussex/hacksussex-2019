@@ -74,11 +74,10 @@ export class Layout extends React.Component {
 
             <div className={styles.layout}
                  ref="layout">
-                <Panel name="home" down="more"
+                <Panel name="home"
                        className={styles.homeSection}
                        open={this.checkSec("home")}
-                       collapse={this.direction}
-                       onDownNav={() => this.moveDown()}>
+                       collapse={this.direction}>
                     { this.props.homeSection }
                 </Panel>
 

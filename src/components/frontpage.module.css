@@ -112,15 +112,17 @@
 
 .afterVideo {
     display: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
     justify-items: center;
     grid-area: afterVid;
-    border-radius: 8px;
     overflow: hidden;
 }
 
 .afterVideo iframe {
-    width: 400px;
-    height: 200px;
+    width: calc(500px + 10vw);
+    height: calc(300px + 10vw);
 }
 
 .afterVideo p {

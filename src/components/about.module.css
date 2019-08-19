@@ -17,7 +17,7 @@
 .content {
     font-size: calc(12px + 0.2vw);
     text-align: center;
-    max-width: calc(400px + 10vw);
+    max-width: calc(400px + 15vw);
     padding: 2em;
     padding-bottom: 0;
 }
