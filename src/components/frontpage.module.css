@@ -119,8 +119,8 @@
 }
 
 .afterVideo iframe {
-    width: 120%;
-    height: 100%;
+    width: 400px;
+    height: 200px;
 }
 
 .afterVideo p {
