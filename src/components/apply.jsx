@@ -33,25 +33,31 @@ const MyMLH = () => {
     )
 }
 
-export const PreApply = () => (
-    <div className={styles.preApply}>
-        <div className={styles.mlhDetail}>
-            To streamline the signup process and have all your
-            hacker information in one place, we're using MyMLH for
-            registration this year
+const Message = ({ message, button }) => (
+    <div className={styles.messagePage}>
+        <div className={styles.logo}>
+            <img src={logo} alt="HackSussex Logo" />
         </div>
-        <MyMLH />
+        <div className={styles.messageDetail}>
+            { message }
+        </div>
+        { button }
     </div>
 )
 
-export const PostApply = () => (
-    <div className={styles.postApply}>
-        <p className={styles.postApplyText}>
-         Thanks for applying{"!"} We're looking forward to seeing you at HackSussex 2019.
+export const PreApply = () => {
+    const text = `To streamline the signup process and have all your hacker information in one place, we're using MyMLH for registration this year`
+
+    return (<Message message={text} button={<MyMLH />} />)
+}
+
+export const PostApply = () => {
+    const text = (
+        <p>
+            Thanks for applying{"!"} We're looking forward to seeing you at HackSussex 2019.
             Make sure to check the <a href="/" className={styles.postApplyLink}>FAQ</a> (below the frontpage) for any additional information
         </p>
-        <Button href="/">
-                BACK HOME
-        </Button>
-    </div>
-)
+    )
+
+    return (<Message message={text} button={<Button href="/">BACK HOME </Button>} />)
+}
