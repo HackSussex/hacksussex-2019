@@ -1,6 +1,6 @@
 .frontPage {
     display: grid;
-    min-height: 90vh;
+    min-height: 85vh;
     grid-template-areas:
         "logo"
             "info"
@@ -15,7 +15,7 @@
 
 .logo {
     display: grid;
-    width: calc(120px + 22vw);
+    width: calc(200px + 19vw);
     align-self: end;
     align-items: center;
     grid-area: logo;
@@ -134,7 +134,8 @@
 }
 
 .afterVideoMinimal {
-    font-size: calc(12px + 0.2vw);
+    align-self: start;
+    font-size: calc(12px + 1vw);
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     padding-top: 1em;
