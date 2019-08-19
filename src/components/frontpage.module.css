@@ -1,6 +1,6 @@
 .frontPage {
     display: grid;
-    min-height: 80vh;
+    min-height: 90vh;
     grid-template-areas:
         "logo"
             "info"
