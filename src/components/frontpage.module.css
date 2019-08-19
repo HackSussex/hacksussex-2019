@@ -1,5 +1,6 @@
 .frontPage {
     display: grid;
+    min-height: 85vh;
     grid-template-areas:
         "logo"
             "info"
@@ -13,10 +14,15 @@
 
 .logo {
     display: grid;
-    width: calc(120px + 20vw);
+    width: calc(120px + 22vw);
     align-self: start;
     align-items: center;
     grid-area: logo;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    margin: 0;
 }
 
 .info {
@@ -37,7 +43,7 @@
 .bigBar {
     composes: bar;
     width: 6em;
-    margin-top: 0.1em;
+    margin-top: 0;
 }
 
 .date, .location {
@@ -57,7 +63,7 @@
 .smallBar {
     composes: bar;
     width: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .applyButton, applyButton:visited {

@@ -1,12 +1,10 @@
 .panel {
     display: grid;
-    min-height: 100vh;
     max-width: 100vw;
     align-items: center;
     justify-items: center;
     /* grid-template-rows: 10% 80% 10%; */
     grid-template-areas:
-        "up up up"
             "content content content"
             "bot bot bot";
     padding-bottom: 1em;
