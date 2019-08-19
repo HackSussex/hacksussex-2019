@@ -28,7 +28,7 @@ module.exports = {
               short_name: `hs-2019`,
               start_url: `/`,
               background_color: `#FFFFFF`,
-              icon: `src/images/favicon-32x32.png`,
+              icon: `src/images/hs-logo.png`,
           },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
