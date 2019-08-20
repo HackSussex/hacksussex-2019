@@ -4,13 +4,13 @@
     background-size: 200%;
     width: 100vw;
     height: 100vh;
-    padding: 20vh 1em 40vh 1em;
+    padding: 0 1em 40vh 1em;
     align-items: center;
     justify-items: center;
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: calc(150px + 5vw);
     max-height: 100px;
     margin: 0;
     margin-bottom: 10%;
@@ -23,6 +23,14 @@
     padding: 0.8em 0 1.2em 0;
     font-size: calc(12px + 0.5vw);
     font-family: "Quicksand", sans-serif;
+}
+
+.backButton {
+    padding: 1em;
+}
+
+.backButton img {
+    margin: 0;
 }
 
 .button, button:visited {

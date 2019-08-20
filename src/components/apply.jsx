@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "./apply.module.css";
 import util from "./util.module.css";
 import logo from "../images/logo-gradient.png";
+import leftArrow from "../images/arrow-left.svg";
 import Link from "./link.jsx";
 
 const clientID = "7927d1dfdf4d60c0ec15a87262793e12880bc37a094bc535caf53a334b2ee0eb"
@@ -43,7 +44,16 @@ const Message = ({ message, button }) => (
 export const PreApply = () => {
     const text = `To streamline the signup process and have all your hacker information in one place, we're using MyMLH for registration this year`
 
-    return (<Message message={text} button={<MyMLH />} />)
+    return (
+        <div id="apply">
+            <div className={styles.backButton}>
+                <a href="/">
+                    <img src={leftArrow} alt="Back Home" />
+                </a>
+            </div>
+            <Message message={text} button={<MyMLH />} />
+        </div>
+    )
 }
 
 export const PostApply = () => {
