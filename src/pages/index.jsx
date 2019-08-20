@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Layout } from "../components/layout.jsx";
 import { FrontPage } from "../components/frontpage.jsx";
 import { Challenges } from "../components/challenges.jsx";
@@ -46,18 +47,22 @@ const faqs = [
         question: "How can I get in touch?",
         answer: (
             <p>
-                You can ask us any questions you have on our <a href="https://www.facebook.com/hacksussex/">Facebook Page</a>, tweet us at our <a href="https://twitter.com/hacksussex?lang=en">Twitter</a>, or send us an <a href="mailto:admin@hacksussex.co.uk">Email</a>. We'll be sure to respond as soon as possible.
+                You can ask us any questions you have on our <a href="https://www.facebook.com/hacksussex/">Facebook Page</a>, tweet us at our <a href="https://twitter.com/hacksussex?lang=en">Twitter</a>, or send us an <a href="mailto:admin@hacksussex.co.uk">Email</a>
             </p>
         )
     }
 ]
 
-            const sponsorList = []
+const sponsorList = []
 
-            export default () => (
-                <div id="root">
-                <Layout
-                aboutSection={<About title="About HackSussex">{ about }</About>}
+export default () => (
+    <div id="root">
+        <Helmet>
+            <meta charset="utf-8" />
+            <title>HackSussex 2019</title>
+        </Helmet>
+        <Layout
+            aboutSection={<About title="About HackSussex">{ about }</About>}
             homeSection={<FrontPage />}
             challengesSection={<Challenges />}
             faqSection={<Faq faqs={faqs} />}
