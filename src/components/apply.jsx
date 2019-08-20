@@ -17,6 +17,7 @@ const Button = ({ children, href }) => (
 const MyMLH = () => {
     const testRedirect = "https://confident-babbage-60726a.netlify.com/complete"
     const productionRedirect = "https://hacksussex.com/complete"
+    const scope = "email+birthday+education+demographics"
 
     const link = `https://my.mlh.io/oauth/authorize?client_id=${clientID}&redirect_uri=${productionRedirect}&response_type=code&scope=${scope}`
 
